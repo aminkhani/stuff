@@ -3,5 +3,7 @@
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./attachments",
   "newFileLocation": "current",
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "defaultViewMode": "preview",
+  "showLineNumber": true
 }

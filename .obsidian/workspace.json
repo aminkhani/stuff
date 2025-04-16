@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
-                "mode": "source",
+                "file": "📁Stuff/Database/Database.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Database"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#ScaleDatabase",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -140,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md",
+                "file": "📁Stuff/Database/Database.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of Database"
             }
           },
           {
@@ -158,9 +159,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "4aa9f8acf8091e05",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -180,17 +195,17 @@
   },
   "active": "d5a94c5f612833e6",
   "lastOpenFiles": [
+    "📁Stuff/Database/Vacuum.md",
+    "📁Stuff/Database/Database.md",
+    "📁Templates/Template Note.md",
     "Untitled.md",
     "📁Templates/Untitled.md",
-    "📁Templates/Template Note.md",
     "📁Templates",
-    "📁Stuff/Database/Vacuum.md",
     "📁Stuff/Database/Untitled 2.md",
     "📁Stuff/Database/Untitled.md",
     "📁Stuff/Database/Untitled 1.md",
     "2025-04-16.md",
     "Vacuum process.md",
-    "📁Stuff/Database/Database.md",
     "Partitioning.md",
     "📁Stuff/Stuff.md",
     "📁Stuff/Django/Django.md",

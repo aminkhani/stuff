@@ -1,5 +1,5 @@
 
-- [[Vacuum]]
+- ## [[Vacuum]]
 - [[Partitioning]]
 - [[Indexing]]
 - [[Replication]]

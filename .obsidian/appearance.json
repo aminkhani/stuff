@@ -1,4 +1,9 @@
 {
   "cssTheme": "Minimal",
-  "accentColor": "#006aa3"
+  "accentColor": "#006aa3",
+  "baseFontSizeAction": true,
+  "baseFontSize": 21,
+  "textFontFamily": "",
+  "interfaceFontFamily": "",
+  "nativeMenus": false
 }
