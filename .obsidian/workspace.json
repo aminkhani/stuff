@@ -11,14 +11,10 @@
             "id": "a1396697e185c2d5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "📁Stuff/Database/Vacuum.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vacuum"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -178,8 +174,10 @@
   },
   "active": "4b01253c0d8fbbb2",
   "lastOpenFiles": [
-    "📁Stuff/Database/Database.md",
+    "Vacuum process.md",
+    "Partitioning.md",
     "📁Stuff/Database/Vacuum.md",
+    "📁Stuff/Database/Database.md",
     "📁Stuff/Stuff.md",
     "📁Stuff/Django/Django.md",
     "📁Stuff/Django/Authorization.md",
