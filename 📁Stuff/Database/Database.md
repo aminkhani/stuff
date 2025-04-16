@@ -1,0 +1,12 @@
+
+- [[Vacuum]]
+- [[Partitioning]]
+- [[Indexing]]
+- [[Replication]]
+- [[Sharding]]
+- [[Table Migration Strategies]]
+- [[Caching]]
+- [[Materialized Views]]
+- [[Denormaliztion]]
+- [[CAP Theory]]
+- [[WAL Log]]

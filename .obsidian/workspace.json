@@ -11,10 +11,14 @@
             "id": "a1396697e185c2d5",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Vacuum.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Vacuum"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#ScaleDatabase",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -159,8 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,21 +178,24 @@
   },
   "active": "a1396697e185c2d5",
   "lastOpenFiles": [
+    "📁Stuff/Database/Database.md",
+    "Vacuum.md",
+    "📁Stuff/Stuff.md",
+    "📁Stuff/Django/Django.md",
+    "📁Stuff/Django/Authorization.md",
+    "📁Stuff/Django/Authentication.md",
+    "📁Stuff/Untitled.md",
+    "📁Stuff/Database/Scale Database.md",
     "test.md",
-    "📚Stuff/Stuff.md",
-    "📚Stuff/Django/Django.md",
     "Database.canvas",
     "2025-04-16.md",
     "Database.md",
-    "📚Stuff/Database/Scale Database.md",
     "Files.canvas",
-    "📚Stuff/Database",
-    "📚Stuff/Django/Authentication.md",
-    "📚Stuff/Django/Authorization.md",
-    "📚Stuff/SoftwareDesign",
-    "📚Stuff/Security",
-    "📚Stuff/Django",
+    "📁Stuff/Database",
+    "📁Stuff/SoftwareDesign",
+    "📁Stuff/Security",
+    "📁Stuff/Django",
     "README.md",
-    "📚Stuff"
+    "📁Stuff"
   ]
 }

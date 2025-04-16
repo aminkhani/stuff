@@ -1,6 +1,0 @@
-## [Authorization](./Authorization)
-## [Authentication](./Authentication)
-
-
-
-
