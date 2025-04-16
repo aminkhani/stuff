@@ -11,10 +11,14 @@
             "id": "a77b09febbaf587e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "📚Stuff/test.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "test"
             }
           }
         ]
@@ -172,10 +176,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b01253c0d8fbbb2",
+  "active": "a77b09febbaf587e",
   "lastOpenFiles": [
-    "Stuff",
-    "Untitled.md",
+    "📚Stuff/test.md",
+    "📚Stuff",
     "README.md"
   ]
 }
