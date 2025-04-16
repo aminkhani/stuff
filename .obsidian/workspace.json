@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Vacuum.md",
+                "file": "📁Stuff/Database/Vacuum.md",
                 "mode": "source",
                 "source": false
               },
@@ -176,10 +176,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a1396697e185c2d5",
+  "active": "4b01253c0d8fbbb2",
   "lastOpenFiles": [
     "📁Stuff/Database/Database.md",
-    "Vacuum.md",
+    "📁Stuff/Database/Vacuum.md",
     "📁Stuff/Stuff.md",
     "📁Stuff/Django/Django.md",
     "📁Stuff/Django/Authorization.md",
