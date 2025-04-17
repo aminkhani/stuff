@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1bc03ad50ceeebef",
+        "id": "961f3eee323ec70d",
         "type": "tabs",
         "children": [
           {
-            "id": "201bb76c6f4c7ae2",
+            "id": "09c8dbde9c68e9ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "📁Stuff/📁Django/Authorization.md",
+                "file": "📁Stuff/📁Django/Django.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Authorization"
+              "title": "Django"
             }
           }
         ]
@@ -204,8 +204,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "201bb76c6f4c7ae2",
+  "active": "09c8dbde9c68e9ef",
   "lastOpenFiles": [
+    "📁Stuff/📁Django/Authentication.md",
     "📁Stuff/📁Django/Authorization.md",
     "📁Stuff/📁Django/Django.md",
     "📁Stuff/📁Django/OAuth.md",
@@ -239,7 +240,6 @@
     "📁Stuff/Django/Authorization.md",
     "📁Stuff/Django/Authentication.md",
     "📁Stuff/Untitled.md",
-    "📁Stuff/Database/Scale Database.md",
     "Database.canvas",
     "Files.canvas",
     "📁Stuff/📁Database",
