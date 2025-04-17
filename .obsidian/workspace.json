@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "📁Stuff/Database/Database.md",
+                "file": "📁Stuff/Database/Vacuum.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Database"
+              "title": "Vacuum"
+            }
+          },
+          {
+            "id": "bf0f39d5ce2b6299",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "📁Stuff/Database/qwe.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "qwe"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,6 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "📁Stuff/Database/qwe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for qwe"
             }
           },
           {
@@ -142,7 +157,7 @@
               "type": "outline",
               "state": {
                 "file": "📁Stuff/Database/Database.md",
-                "followCursor": false,
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -175,12 +190,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,16 +207,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d5a94c5f612833e6",
+  "active": "bf0f39d5ce2b6299",
   "lastOpenFiles": [
     "📁Stuff/Database/Vacuum.md",
+    "📁Stuff/Database/qwe.md",
+    "Untitled.canvas",
     "📁Stuff/Database/Database.md",
     "📁Templates/Template Note.md",
     "Untitled.md",
     "📁Templates/Untitled.md",
     "📁Templates",
     "📁Stuff/Database/Untitled 2.md",
-    "📁Stuff/Database/Untitled.md",
     "📁Stuff/Database/Untitled 1.md",
     "2025-04-16.md",
     "Vacuum process.md",

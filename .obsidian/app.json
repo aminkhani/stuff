@@ -5,5 +5,5 @@
   "newFileLocation": "current",
   "newLinkFormat": "relative",
   "defaultViewMode": "preview",
-  "showLineNumber": true
+  "showLineNumber": false
 }
