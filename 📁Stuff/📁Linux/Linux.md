@@ -1,5 +1,5 @@
 ## My Learning things in Linux**🐧**
 
-- ### 🧩[[🧩Socket]]
+- ### [[Socket]]
 - ### [[Pipeline]]
 - 

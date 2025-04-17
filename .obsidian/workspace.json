@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "ef2b0561ec3826e9",
+        "id": "c244c8fa242d8123",
         "type": "tabs",
         "children": [
           {
-            "id": "257cd83a5287b6f1",
+            "id": "eea2532da0c22d33",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -185,7 +186,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,15 +201,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "257cd83a5287b6f1",
+  "active": "eea2532da0c22d33",
   "lastOpenFiles": [
+    "📁Stuff/📁SoftwareDesign/Design Walkthrough.md",
+    "📁Stuff/📁SoftwareDesign/Software Design.md",
+    "📁Stuff/📁Linux/Linux.md",
+    "📁Stuff/📁Linux/Socket.md",
+    "📁Stuff/📁Linux/UNIX Sockets.md",
+    "📁Stuff/📁Database/Database.md",
+    "SoftwareDesign/SoftwareDesign",
+    "📁Stuff/📁SoftwareDesign",
+    "📁Stuff/📁Database/VACUUM.md",
     "Untitled.canvas",
-    "📁Stuff/📁Linux/🧩Socket.md",
-    "📁Stuff/📁Linux/🧱 UNIX Sockets.md",
-    "📁Stuff/📁Linux/🐧Linux.md",
-    "📁Stuff/📁Database/🛢️Database.md",
     "📁Stuff/📁Linux",
-    "📁Stuff/📁Database/🧼VACUUM.md",
     "📁Stuff/Database/attachments/Pasted image 20250417104828.png",
     "📁Stuff/Database/attachments",
     "📁Stuff/📁Database/Vacuum.md",
