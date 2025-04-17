@@ -14,6 +14,8 @@ If we don’t clean up the dead rows, the database gets bloated and slow! That�
 | 🐢 Slower Performance       | Queries slow down as table size increases                              |
 | ⚠️ Wraparound Protection    | PostgreSQL uses 32-bit transaction IDs, which eventually "wrap around" |
 | 🔄 Keeps Statistics Updated | For better query planning (when using `VACUUM ANALYZE`)                |
+
+---
 ## ⚙️ Types of VACUUM and When to Use Them
 
 | VACUUM Type      | What It Does 🌟                    | Use Case 🔍                        |
@@ -22,7 +24,10 @@ If we don’t clean up the dead rows, the database gets bloated and slow! That�
 | `VACUUM ANALYZE` | Cleanup + updates planner stats 📊 | After mass updates/inserts         |
 | `VACUUM FULL`    | Rewrites entire table 🧨⚠️         | When table is severely bloated     |
 | `VACUUM FREEZE`  | Marks very old rows as frozen ❄️   | Protects against wraparound errors |
-## 🔄 Autovacuum: The Database's Robot Cleaner 🤖
+
+
+---
+## 🔄 Autovacuum: The Database's Robot Cleaner 
 
 You don’t have to manually run VACUUM all the time. PostgreSQL includes **autovacuum**, which:
 - ✅ Automatically triggers VACUUM when needed
@@ -37,7 +42,7 @@ autovacuum_vacuum_threshold = 50
 autovacuum_vacuum_scale_factor = 0.2
 autovacuum_naptime = 1min
 ```
-
+---
 ## 📐 How to Use VACUUM
 
 ### 🔹 Basic Vacuum
@@ -57,7 +62,7 @@ VACUUM my_table;
 ```sql
 VACUUM FULL my_table;
 ```
-
+---
 ## 🧪 Check Vacuum Stats
 
 Use this query to see vacuum activity:
@@ -82,3 +87,5 @@ SELECT relname, last_vacuum, last_autovacuum, n_dead_tup FROM pg_stat_user_table
 - **Autovacuum** = Your cleanup assistant 🤖
 - **Analyze** keeps query performance sharp 📊
 - **Don’t forget to monitor!** 📈
+
+---

@@ -1,6 +1,6 @@
 ## My Learning things in Database**🛢️**
 
-- ### [[VACUUM]]
+- ### [[🧼VACUUM]]
 - ### [[Partitioning]]
 - ### [[Indexing]]
 - ### [[Replication]]

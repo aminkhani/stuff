@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "📁Stuff/📁Database/VACUUM.md",
+                "file": "📁Stuff/📁Database/🧼VACUUM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VACUUM"
+              "title": "🧼VACUUM"
             }
           }
         ]
@@ -186,12 +186,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,8 +206,8 @@
   },
   "active": "139556a0212feb1d",
   "lastOpenFiles": [
+    "📁Stuff/📁Database/🧼VACUUM.md",
     "📁Stuff/📁Database/🛢️Database.md",
-    "📁Stuff/📁Database/VACUUM.md",
     "📁Stuff/Database/attachments/Pasted image 20250417104828.png",
     "📁Stuff/Database/attachments",
     "📁Stuff/📁Database/Vacuum.md",

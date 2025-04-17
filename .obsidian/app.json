@@ -5,5 +5,14 @@
   "newFileLocation": "current",
   "newLinkFormat": "relative",
   "defaultViewMode": "preview",
-  "showLineNumber": false
+  "showLineNumber": false,
+  "readableLineLength": true,
+  "strictLineBreaks": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
