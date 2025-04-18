@@ -17,15 +17,15 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 ---
 ### 🐍 Django
 
-- #### 🔐 [Authentication](/Stuff/Django/Authentication)
-- #### 🔑 [Authorization](/Stuff/Django/Authorization)
-	- ##### 🚪 [OAuth](/Stuff/Django/OAuth)
+- #### 🔐 [Authentication](/Stuff/Django/Authentication.md)
+- #### 🔑 [Authorization](/Stuff/Django/Authorization.md)
+	- ##### 🚪 [OAuth](/Stuff/Django/OAuth.md)
 ---
 ### 🏗️ Software Design
 
-- #### 🖥️ [Web Server](/Stuff/SoftwareDesign/WebServer/WebServer)
-	- ##### 🚦 [Nginx](/Stuff/SoftwareDesign/WebServer/Nginx)
-- #### 🧩 [Design Walkthrough](/Stuff/SoftwareDesign/DesignWalkthrough)
+- #### 🖥️ [Web Server](/Stuff/SoftwareDesign/WebServer/WebServer.md)
+	- ##### 🚦 [Nginx](/Stuff/SoftwareDesign/WebServer/Nginx.md)
+- #### 🧩 [Design Walkthrough](/Stuff/SoftwareDesign/DesignWalkthrough.md)
 ---
 ### 🚀 DevOps
 
