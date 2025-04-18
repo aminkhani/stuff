@@ -30,7 +30,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 ### 🚀 DevOps
 
 - #### 🐳 Docker
-- #### ⚓[Kubernetes](./Stuff/DevOps/Kubernetes/README)
+- #### ⚓[Kubernetes](./Stuff/DevOps/Kubernetes/README.md)
 - #### 🧪 CI/CD
 - #### 🔍 Monitoring/Logging
 - #### 🔄 Version Control (Git)

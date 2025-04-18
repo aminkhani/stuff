@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a9274316e854adb3",
+        "id": "3afb60a37ba3ac56",
         "type": "tabs",
         "children": [
           {
-            "id": "3af3ea2d743901be",
+            "id": "96704aea7c8da7f6",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -214,11 +214,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3af3ea2d743901be",
+  "active": "96704aea7c8da7f6",
   "lastOpenFiles": [
+    "Stuff/DevOps/Kubernetes/README.md",
     "README.md",
     "Stuff/Linux/Socket.md",
-    "Stuff/DevOps/Kubernetes/README.md",
     "Stuff/SoftwareDesign/Design Walkthrough.md",
     "Stuff/SoftwareDesign/WebServer/Web Server.md",
     "Stuff/Linux/Linux.md",
