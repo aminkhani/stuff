@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e55a47933028a4ce",
+        "id": "c05361574104bf07",
         "type": "tabs",
         "children": [
           {
-            "id": "98c20c04f4ee0824",
+            "id": "15a5b1c3822a1652",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "📁Stuff/📁SoftwareDesign/Software Design.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Software Design"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -73,12 +69,23 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "cee1bb4b1f9f6948",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {},
+              "icon": "sheets-in-box",
+              "title": "File Tree"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 291.5
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -201,50 +208,57 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
-  "active": "98c20c04f4ee0824",
+  "active": "15a5b1c3822a1652",
   "lastOpenFiles": [
-    "📁Stuff/📁SoftwareDesign/Design Walkthrough.md",
-    "📁Stuff/📁SoftwareDesign/📁WebServer/Web Server.md",
-    "📁Stuff/📁SoftwareDesign/📁WebServer/Nginx.md",
-    "📁Stuff/📁Linux/UNIX Sockets.md",
-    "📁Stuff/📁Linux/Socket.md",
-    "📁Stuff/📁Linux/Linux.md",
-    "📁Stuff/📁Django/OAuth.md",
-    "📁Stuff/📁Django/Django.md",
-    "📁Stuff/📁Django/Authorization.md",
-    "📁Stuff/📁Django/Authentication.md",
-    "📁Stuff/📁Database/VACUUM.md",
-    "📁Stuff/📁Database/Partitioning.md",
-    "📁Stuff/📁Database/Database.md",
-    "📁Stuff/📁SoftwareDesign/Software Design.md",
-    "📁Stuff/📁SoftwareDesign/📁WebServer",
-    "📁Stuff/📁Django",
-    "SoftwareDesign/SoftwareDesign",
-    "📁Stuff/📁SoftwareDesign",
+    "Stuff/Database/VACUUM.md",
+    "Stuff/Database/Partitioning.md",
+    "Stuff/kubernetes/ClusterInstallation/Minikube/minikube.png",
+    "Stuff/kubernetes/ClusterInstallation/Minikube/minikube.md",
+    "Stuff/kubernetes/ClusterInstallation/Kubespray/kubespray.md",
+    "Stuff/kubernetes/ClusterInstallation/Kubeadm/kubeadm.md",
+    "Stuff/kubernetes/ClusterInstallation/K3s/k3s.png",
+    "Stuff/kubernetes/ClusterInstallation/K3s/k3s.md",
+    "Stuff/kubernetes/ClusterInstallation/installation/helm-install.sh",
+    "Stuff/kubernetes/ClusterInstallation/Containerd/containerd.md",
+    "Stuff/kubernetes/ClusterInstallation/Minikube",
+    "Stuff/kubernetes/ClusterInstallation/Kubespray",
+    "Stuff/kubernetes/ClusterInstallation/Kubeadm",
+    "Stuff/kubernetes/ClusterInstallation/K3s",
+    "Stuff/kubernetes/ClusterInstallation/installation",
+    "Stuff/kubernetes/ClusterInstallation/Containerd",
+    "Stuff/kubernetes/ClusterInstallation",
+    "Stuff/kubernetes/Backup&DisasterRecovery/Velero/README.md",
+    "Stuff/kubernetes/Backup&DisasterRecovery/Velero",
+    "Stuff/kubernetes/Backup&DisasterRecovery",
+    "Stuff/kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
+    "Stuff/kubernetes/Workloads&Controllers/Job/paralel-job/Readme.md",
+    "Stuff/kubernetes/Workloads&Controllers/Job/README.md",
+    "Stuff/kubernetes/Workloads&Controllers/Deployment/README.md",
+    "Stuff/kubernetes/Workloads&Controllers/DaemonSet/README.md",
+    "Stuff/kubernetes/Workloads&Controllers/CronJob/README.md",
+    "Stuff/kubernetes/Workloads&Controllers/README.md",
+    "Stuff/kubernetes/Networking&Services/AdvancedNetworking/Ingress/README.md",
+    "Stuff/kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
+    "Stuff/kubernetes/Networking&Services/AdvancedNetworking/HeadlessService/README.md",
+    "Stuff/kubernetes/Networking&Services/NodePort/README.md",
+    "Stuff/kubernetes/Networking&Services/LoadBalancer/README.md",
+    "Stuff/kubernetes/Networking&Services/ClusterIP/README.md",
+    "Stuff/kubernetes/Networking&Services/README.md",
+    "Stuff/kubernetes/Multi-ContainerPatterns/README.md",
+    "Stuff/kubernetes/CoreConcepts/Architecture/README.md",
+    "Stuff/kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
+    "Stuff/kubernetes/CoreConcepts/Architecture/kube.png",
+    "Stuff/kubernetes/CoreConcepts/Architecture/kube-architecture.png",
+    "Stuff/SoftwareDesign/Software Design.md",
+    "Stuff/SoftwareDesign/Design Walkthrough.md",
+    "Stuff/SoftwareDesign/WebServer/Web Server.md",
     "Untitled.canvas",
-    "📁Stuff/📁Linux",
     "📁Stuff/Database/attachments/Pasted image 20250417104828.png",
-    "📁Stuff/Database/attachments",
-    "📁Stuff/📁Database/Vacuum.md",
-    "📁Stuff/Database/qwe.md",
-    "📁Templates/Template Note.md",
-    "Untitled.md",
-    "📁Templates/Untitled.md",
-    "📁Templates",
-    "📁Stuff/Database/Untitled 2.md",
-    "📁Stuff/Database/Untitled 1.md",
-    "2025-04-16.md",
-    "Vacuum process.md",
-    "Partitioning.md",
-    "📁Stuff/Stuff.md",
-    "📁Stuff/Django/Django.md",
     "Database.canvas",
-    "Files.canvas",
-    "📁Stuff/📁Database",
-    "📁Stuff/SoftwareDesign",
-    "📁Stuff/Security"
+    "Files.canvas"
   ]
 }
