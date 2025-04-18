@@ -6,5 +6,8 @@
   "textFontFamily": "",
   "interfaceFontFamily": "",
   "nativeMenus": false,
-  "showRibbon": true
+  "showRibbon": true,
+  "enabledCssSnippets": [
+    "folderIcon"
+  ]
 }

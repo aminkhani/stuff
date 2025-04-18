@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8297909795c05c81",
+        "id": "c86e24a4959263c8",
         "type": "tabs",
         "children": [
           {
-            "id": "c0a5fd2767c63053",
+            "id": "7efc86500a476437",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Stuff/kubernetes/README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -194,29 +198,31 @@
               "title": "Advanced Tables"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": true,
-      "daily-notes:Open today's daily note": true,
-      "templates:Insert template": true,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": true,
-      "vscode-editor:Create Code File": true,
-      "iconic:Open rulebook": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "vscode-editor:Create Code File": false
     }
   },
   "active": "4b01253c0d8fbbb2",
   "lastOpenFiles": [
+    "Stuff/kubernetes/().md",
+    "Stuff/kubernetes/README.md",
+    "Stuff/SoftwareDesign/WebServer/Nginx.md",
     "Untitled.md",
     "Stuff/SoftwareDesign/Software Design.md",
     "Stuff/Database/easd.py.md",
@@ -252,9 +258,6 @@
     "Stuff/kubernetes/ClusterInstallation/Minikube",
     "Stuff/kubernetes/ClusterInstallation/Kubespray",
     "Stuff/kubernetes/ClusterInstallation/Kubeadm",
-    "Stuff/kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
-    "Stuff/kubernetes/Workloads&Controllers/Job/README.md",
-    "Stuff/kubernetes/Workloads&Controllers/Deployment/README.md",
     "Stuff/kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
     "Stuff/kubernetes/CoreConcepts/Architecture/kube.png",

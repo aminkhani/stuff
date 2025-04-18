@@ -77,7 +77,7 @@ http {
 - 👑 **Master/Worker:** `worker_processes auto;` lets Nginx spawn one worker per CPU core.
 - 🔄 **Event Loop:** Efficiently handles thousands of clients with `worker_connections`.
 - 🔀 **Upstream:** Defines a load‑balanced pool (`upstream backend_app`).
-- 📥📤 **Proxying:** `proxy_pass` sends requests to your app servers, keeping headers intact.
+- 📤 **Proxying:** `proxy_pass` sends requests to your app servers, keeping headers intact.
 - 📷 **Static Serving:** `/static/` is served directly from disk, bypassing proxy.
 ---
 ## 🚀 Nginx’s Areas of Expertise
