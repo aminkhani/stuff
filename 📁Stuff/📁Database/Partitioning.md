@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🧱 What is Partitioning in Databases?
 
 **Partitioning** is the process of **splitting a large table into smaller, more manageable pieces** called **partitions**—while keeping them logically as **one single table** to the application.
@@ -80,10 +83,10 @@ Mix two methods like **range + hash** for more control.
 ---
 ## ⚙️ Partitioning vs Sharding
 
-|Concept|Emoji|What it means|
-|---|---|---|
-|**Partitioning**|🗂️|Splitting data _within_ a single database|
-|**Sharding**|🌍|Splitting data _across multiple databases/servers_|
+| Concept          | What it means                                      |
+| ---------------- | -------------------------------------------------- |
+| **Partitioning** | Splitting data _within_ a single database          |
+| **Sharding**     | Splitting data _across multiple databases/servers_ |
 
 > 🔥 Pro tip: Partitioning can be done inside a single Postgres/MySQL instance. Sharding is more complex and involves scaling horizontally.
 ---
@@ -125,22 +128,22 @@ PostgreSQL supports:
 ---
 ## 🧪 Real-Life Use Cases
 
-|Use Case|Partition Type|Emoji|
-|---|---|---|
-|Web server logs|Range by date|📅📁|
-|E-commerce orders by country|List|🌍🛒|
-|Analytics by user ID|Hash|👤📊|
-|IoT sensor data|Range + Hash|📡🧬|
+| Use Case                     | Partition Type |
+| ---------------------------- | -------------- |
+| Web server logs              | Range by date  |
+| E-commerce orders by country | List           |
+| Analytics by user ID         | Hash           |
+| IoT sensor data              | Range + Hash   |
 
 ---
 ## 🧠 Summary
 
-|Concept|Emoji|Takeaway|
-|---|---|---|
-|Partitioning|🧩|Breaking large tables into pieces for performance|
-|Types|📅🔢🎲|Range, List, Hash (and combos!)|
-|When to use|🚀|Big tables, time-series, regional data|
-|Benefits|⚡|Speed, maintainability, scalability|
+| Concept      | Takeaway                                          |
+| ------------ | ------------------------------------------------- |
+| Partitioning | Breaking large tables into pieces for performance |
+| Types        | Range, List, Hash (and combos!)                   |
+| When to use  | Big tables, time-series, regional data            |
+| Benefits     | Speed, maintainability, scalability               |
 
 ---
 > Let’s build a **Django example with PostgreSQL partitioning** from scratch! 🐍
@@ -251,12 +254,12 @@ You can write a Django `management command` or a `cron job` to:
 ---
 ### 🧠 Summary
 
-|Step|What You Did|Emoji|
-|---|---|---|
-|1|Set up Django + Postgres|⚙️🐘|
-|2|Defined `Log` model|🧩📝|
-|3|Created partitioned table in SQL|📄🪄|
-|4|Inserted/query data|📥🔍|
-|5|PostgreSQL handled partitions|🪄⚡|
+| Step | What You Did                     |
+| ---- | -------------------------------- |
+| 1    | Set up Django + Postgres         |
+| 2    | Defined `Log` model              |
+| 3    | Created partitioned table in SQL |
+| 4    | Inserted/query data              |
+| 5    | PostgreSQL handled partitions    |
 
 ---

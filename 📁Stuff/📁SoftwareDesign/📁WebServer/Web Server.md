@@ -1,3 +1,7 @@
+
+```table-of-contents
+```
+---
 ## 🖥️ What Is a Web Server?
 
 A **web server** is both hardware and software that delivers web content (HTML pages, images, videos, APIs) to clients (usually web browsers) over the Internet. When you visit a website, your browser sends an HTTP request to the web server, which processes it and responds with the requested resources.
@@ -14,9 +18,9 @@ A **web server** is both hardware and software that delivers web content (HTML p
 ---
 ## 🌐 Popular Web Servers
 
-### 🚀 Nginx
+### 🚀 [[Nginx]]
 
-> Pronounced “engine‑ex,” Nginx is known for its high performance and low memory footprint.
+> Pronounced “engine‑ex,” [[Nginx]] is known for its high performance and low memory footprint.
 
 - **✅ Pros**
     - 🌩️ Exceptional at handling high concurrency (many users at once)

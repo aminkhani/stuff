@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🔐 What is Authorization?
 
 **Authorization** is the process of determining **what an authenticated user is allowed to do**.  
@@ -22,12 +25,12 @@ Imagine you're at a theme park:
 ---
 ## 🛠️ Common Forms of Authorization
 
-| Type                                      | Description                                                    | Emoji      |
-| ----------------------------------------- | -------------------------------------------------------------- | ---------- |
-| **Role-Based Access Control (RBAC)**      | Access is based on user roles (e.g., Admin, Editor, Viewer)    | 👩‍💼👨‍💻 |
-| **Permission-Based Access**               | Access is based on specific actions (e.g., "can_edit_posts")   | ✅🚫        |
-| **Attribute-Based Access Control (ABAC)** | Access based on user attributes, resource type, or environment | 🧬⏰📍      |
-| **Scope-Based ([[OAuth]])**               | In [[OAuth]], scopes define what an app is allowed to access   | 📑🎟️      |
+| Type                                      | Description                                                    |
+| ----------------------------------------- | -------------------------------------------------------------- |
+| **Role-Based Access Control (RBAC)**      | Access is based on user roles (e.g., Admin, Editor, Viewer)    |
+| **Permission-Based Access**               | Access is based on specific actions (e.g., "can_edit_posts")   |
+| **Attribute-Based Access Control (ABAC)** | Access based on user attributes, resource type, or environment |
+| **Scope-Based ([[OAuth]])**               | In [[OAuth]], scopes define what an app is allowed to access   |
 
 ---
 ## 🔄 Authentication vs Authorization

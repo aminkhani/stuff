@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🧩 What Is a Socket?
 
 A **socket** is like a **virtual plug & cable** 🧷🔌 that allows two programs to talk to each other — whether on the same computer 🖥️ or across the internet 🌐.
@@ -58,30 +61,30 @@ read(sockfd, buffer, 1024);
 ---
 ## 🌐 Socket Domains
 
-|Domain|Meaning|Emoji|
-|---|---|---|
-|`AF_INET`|IPv4 Internet|🌍|
-|`AF_INET6`|IPv6 Internet|🌐|
-|`AF_UNIX`|Unix local socket|🧱|
+| Domain     | Meaning           |
+| ---------- | ----------------- |
+| `AF_INET`  | IPv4 Internet     |
+| `AF_INET6` | IPv6 Internet     |
+| `AF_UNIX`  | Unix local socket |
 
 ---
 ## 🔧 Socket Types
 
-|Constant|Meaning|Icon|
-|---|---|---|
-|`SOCK_STREAM`|TCP (reliable) 📦|✅ Ordered|
-|`SOCK_DGRAM`|UDP (fast) ⚡|📡 No order|
-|`SOCK_RAW`|Raw sockets 🛠️|🐾 Low-level|
+| Constant      | Meaning           |
+| ------------- | ----------------- |
+| `SOCK_STREAM` | TCP (reliable) 📦 |
+| `SOCK_DGRAM`  | UDP (fast) ⚡      |
+| `SOCK_RAW`    | Raw sockets 🛠️   |
 
 ---
 ## 🔐 Bonus: Common Syscalls & Tools
 
-|Tool / Call|Purpose|Icon|
-|---|---|---|
-|`netstat`, `ss`|View active sockets 📊|📡 Connections|
-|`lsof -i`|List open files (incl. sockets) 📂|🧰 Debugging|
-|`select`, `poll`|Monitor multiple sockets ⏲️|👀 Async I/O|
-|`recv`, `send`|For reading/writing data ✉️|📤📥 Messaging|
+| Tool / Call      | Purpose                            |
+| ---------------- | ---------------------------------- |
+| `netstat`, `ss`  | View active sockets 📊             |
+| `lsof -i`        | List open files (incl. sockets) 📂 |
+| `select`, `poll` | Monitor multiple sockets ⏲️        |
+| `recv`, `send`   | For reading/writing data ✉️        |
 
 ---
 ## 📦 Socket File Example ([[UNIX Sockets]])

@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🧱 What Are Unix Domain Sockets?
 
 Unix Domain Sockets are like **local pipelines** that let programs on the same machine communicate **without using the network stack**.

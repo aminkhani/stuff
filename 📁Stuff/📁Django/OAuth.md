@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## What is OAuth? 🤔
 
 **OAuth** (Open Authorization) is a **secure framework** that allows third-party apps to access your data **without sharing your password**. Think of it as a "token" that lets someone in without giving them your house keys! 🏡🔑

@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 1. 🧐 Understand the Requirements
 
 ### Functional Requirements ⚙️

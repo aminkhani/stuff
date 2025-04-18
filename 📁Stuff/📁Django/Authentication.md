@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🔑 What is Authentication?
 
 **Authentication** is the process of **verifying who someone is**.
@@ -46,13 +49,13 @@ If all’s good → you’re authenticated and logged in! 🎉
 ---
 ## 🧪 Types of Authentication
 
-| Type                           | Description                         | Emojis |
-| ------------------------------ | ----------------------------------- | ------ |
-| **Password-Based**             | Most common; username + password    | 🔐💬   |
-| **Token-Based (e.g. [[JWT]])** | Tokens passed with each request     | 🎟️📦  |
-| **OAuth (3rd-party login)**    | Login via Google, Facebook, GitHub  | 🌐🔗   |
-| **Multi-Factor (MFA)**         | Extra step: code, fingerprint, etc. | 📱🧬   |
-| **Biometric**                  | Use face, fingerprint, iris, etc.   | 👁️🧠  |
+| Type                           | Description                         |
+| ------------------------------ | ----------------------------------- |
+| **Password-Based**             | Most common; username + password    |
+| **Token-Based (e.g. [[JWT]])** | Tokens passed with each request     |
+| **OAuth (3rd-party login)**    | Login via Google, Facebook, GitHub  |
+| **Multi-Factor (MFA)**         | Extra step: code, fingerprint, etc. |
+| **Biometric**                  | Use face, fingerprint, iris, etc.   |
 
 ---
 ## 🔄 Authentication vs Authorization
@@ -101,11 +104,11 @@ def my_secure_api(request):
 ---
 ## 🔁 Common Authentication Mistakes
 
-|Mistake|Why it's bad|Emoji|
-|---|---|---|
-|Storing passwords as plain text|Huge security risk if breached|⚠️😱|
-|Weak passwords allowed|Easy to guess/brute-force|🔓🧠|
-|No session timeout|Leaves accounts vulnerable|⏰🔓|
+| Mistake                         | Why it's bad                   |
+| ------------------------------- | ------------------------------ |
+| Storing passwords as plain text | Huge security risk if breached |
+| Weak passwords allowed          | Easy to guess/brute-force      |
+| No session timeout              | Leaves accounts vulnerable     |
 
 ---
 ## ✅ Summary

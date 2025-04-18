@@ -1,3 +1,6 @@
+```table-of-contents
+```
+---
 ## 🧼 What Is VACUUM in PostgreSQL?
 
 Think of PostgreSQL like a **journal** 🗒️. Every time you update or delete a row, PostgreSQL doesn’t erase it immediately—it just **marks it as outdated (dead)** and writes a new version somewhere else.
