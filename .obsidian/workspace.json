@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2d00302d1f6180a7",
+        "id": "42e15f216a84589d",
         "type": "tabs",
         "children": [
           {
-            "id": "64f651f3e2f2beb9",
+            "id": "2cc49e6f311661f7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "split-diff-view",
+              "state": {
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: workspace.json"
             }
           }
         ]
@@ -88,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.5
+    "width": 316.5
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -199,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,10 +218,10 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "64f651f3e2f2beb9",
+  "active": "2cc49e6f311661f7",
   "lastOpenFiles": [
+    "Stuff/kubernetes/k8s.md",
     "Stuff/kubernetes/CoreConcepts/Architecture/README.md",
-    "Stuff/kubernetes/README.md",
     "Stuff/kubernetes/().md",
     "Stuff/SoftwareDesign/WebServer/Nginx.md",
     "Untitled.md",
