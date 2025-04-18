@@ -40,6 +40,6 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 
 - 🐙 GitHub: [aminkhani](https://github.com/aminkhani)
 - 💼 LinkedIn: [aminkhani-ai](https://linkedin.com/in/aminkhani-ai)
-- 📬 Email: aminkhani2010l@gmail.com
+- 📬 Email: aminkhani2010@gmail.com
 ---
 🚀  Thanks for stopping by! Let's keep learning, building, and sharing knowledge!
