@@ -11,10 +11,12 @@
             "id": "05024d62e982039f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "vscode-editor",
+              "state": {
+                "file": "Stuff/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml"
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "wget-15min"
             }
           }
         ]
@@ -199,7 +201,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -214,7 +217,7 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "4b01253c0d8fbbb2",
+  "active": "05024d62e982039f",
   "lastOpenFiles": [
     "Stuff/Kubernetes/README.md",
     "Stuff/Kubernetes/CoreConcepts/Architecture/README.md",
