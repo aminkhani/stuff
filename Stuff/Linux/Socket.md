@@ -94,7 +94,7 @@ read(sockfd, buffer, 1024);
 | `recv`, `send`   | For reading/writing data ✉️        |
 
 ---
-## 📦 Socket File Example ([[UNIX Sockets]])
+## 📦 Socket File Example ([[UnixSockets]])
 
 If you use a UNIX domain socket, it creates a file on disk:
 
