@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b63cba04ed0d4c14",
+        "id": "a9274316e854adb3",
         "type": "tabs",
         "children": [
           {
-            "id": "b0a91d72fa82b2f3",
+            "id": "3af3ea2d743901be",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -203,8 +199,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -214,21 +209,40 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "vscode-editor:Create Code File": false
+      "vscode-editor:Create Code File": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b0a91d72fa82b2f3",
+  "active": "3af3ea2d743901be",
   "lastOpenFiles": [
     "README.md",
+    "Stuff/Linux/Socket.md",
+    "Stuff/DevOps/Kubernetes/README.md",
+    "Stuff/SoftwareDesign/Design Walkthrough.md",
+    "Stuff/SoftwareDesign/WebServer/Web Server.md",
+    "Stuff/Linux/Linux.md",
+    "Stuff/Django/Django.md",
+    "Stuff/Django/Authentication.md",
+    "DevOps/README.md",
+    "DevOps",
+    "Kubernetes.md",
+    "Stuff/Database/Database.md",
+    "Stuff/SoftwareDesign/WebServer/Nginx.md",
+    "Stuff/SoftwareDesign/SoftwareDesign.md",
+    "Stuff/SoftwareDesign/Software Design.md",
+    "Stuff/Linux/UNIX Sockets.md",
+    "Stuff/Database/VACUUM.md",
+    "Stuff/Database/Partitioning.md",
+    "Stuff/Django/OAuth.md",
+    "-/-.md",
+    "-",
+    "Stuff/hhh/ada.md",
+    "Stuff/hhh",
     "Stuff/DevOps",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
-    "Stuff/DevOps/Kubernetes/README.md",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/README.md",
     "Stuff/kubernetes/().md",
-    "Stuff/SoftwareDesign/WebServer/Nginx.md",
-    "Stuff/SoftwareDesign/Software Design.md",
     "Stuff/Database/easd.py.md",
     "Stuff/Linux/Untitled.md",
     "My code file.py",
@@ -236,28 +250,10 @@
     "My code file.yml",
     "tt.yaml",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/README.md",
-    "Stuff/Database/VACUUM.md",
     "Stuff/Database/test.md",
     "Stuff/Database/test.yml",
-    "Stuff/Database/test.py",
-    "Stuff/Database/test.py.md",
-    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/Untitled.md",
-    "Stuff/DevOps/Kubernetes/Backup&DisasterRecovery/Velero/README.md",
-    "Stuff/DevOps/Kubernetes/Multi-ContainerPatterns/README.md",
-    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job/Readme.md",
-    "Stuff/Linux/Linux.md",
-    "Stuff/Database/Database.md",
-    "Stuff/Database/Partitioning.md",
-    "Stuff/Django/Django.md",
-    "Stuff/SoftwareDesign/SoftwareDesign.md",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.md",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/Kubespray/kubespray.md",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/Kubeadm/kubeadm.md",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.md",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/installation/helm-install.sh",
-    "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kube.png",
