@@ -26,6 +26,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 - #### 🖥️ [Web Server](/Stuff/SoftwareDesign/WebServer/WebServer.md)
 	- ##### 🚦 [Nginx](/Stuff/SoftwareDesign/WebServer/Nginx.md)
 - #### 🧩 [Design Walkthrough](/Stuff/SoftwareDesign/DesignWalkthrough.md)
+- #### 📐 [SOLID](/Stuff/SoftwareDesign/SOLID.md)
 ---
 ### 🚀 DevOps
 
