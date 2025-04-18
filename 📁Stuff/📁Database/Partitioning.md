@@ -144,6 +144,7 @@ PostgreSQL supports:
 
 ---
 > Let’s build a **Django example with PostgreSQL partitioning** from scratch! 🐍
+> 
 > We'll focus on **Range Partitioning by date** (great for logs, orders, events, etc.)
 
 ## 🧪 Scenario: Log Table Partitioned by `created_at`
@@ -158,9 +159,7 @@ Make sure PostgreSQL is installed and Django is using it:
 ```bash
 pip install psycopg2-binary
 ```
-
 **`settings.py`**:
-
 ```python
 DATABASES = {
     'default': {
