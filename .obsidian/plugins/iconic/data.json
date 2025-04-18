@@ -3,13 +3,13 @@
   "clickableIcons": "desktop",
   "showAllFileIcons": true,
   "showAllFolderIcons": true,
-  "minimalFolderIcons": true,
+  "minimalFolderIcons": false,
   "showItemName": "desktop",
   "biggerSearchResults": "mobile",
   "maxSearchResults": 50,
   "colorPicker1": "list",
   "colorPicker2": "rgb",
-  "uncolorHover": true,
+  "uncolorHover": false,
   "uncolorDrag": true,
   "uncolorSelect": true,
   "uncolorQuick": true,
@@ -17,11 +17,30 @@
   "dialogState": {
     "iconMode": true,
     "emojiMode": false,
-    "rulePage": "file"
+    "rulePage": "folder"
   },
   "appIcons": {},
   "tabIcons": {},
-  "fileIcons": {},
+  "fileIcons": {
+    "Stuff": {
+      "color": "yellow",
+      "unsynced": [
+        "104524847b1f65c9"
+      ]
+    },
+    "Stuff/Database": {
+      "color": "orange",
+      "unsynced": [
+        "104524847b1f65c9"
+      ]
+    },
+    "Stuff/Django": {
+      "color": "orange",
+      "unsynced": [
+        "104524847b1f65c9"
+      ]
+    }
+  },
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},

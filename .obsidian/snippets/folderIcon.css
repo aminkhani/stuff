@@ -1,0 +1,12 @@
+.nav-folder .nav-folder-title-content:before {
+    content: "\1F4C2"; /* open folder character  */
+    padding-right: 8px;
+}
+.nav-folder.is-collapsed .nav-folder-title-content:before {
+    content: "\1F4C1" ;
+    padding-right: 8px;
+}
+.nav-file-title-content:before {
+    content: "\1F5D2";
+    padding-right: 8px;
+}
