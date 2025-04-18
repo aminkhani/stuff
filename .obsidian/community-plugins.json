@@ -1,13 +1,11 @@
 [
   "obsidian-git",
-  "emoji-shortcodes",
   "highlightr-plugin",
-  "execute-code",
   "code-styler",
   "table-editor-obsidian",
   "automatic-table-of-contents",
-  "file-tree-alternative",
   "vscode-editor",
   "obsidian-emoji-toolbar",
-  "editor-width-slider"
+  "editor-width-slider",
+  "iconic"
 ]

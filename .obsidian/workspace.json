@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0674da0748dfea9a",
+        "id": "394d983b0af3eac0",
         "type": "tabs",
         "children": [
           {
-            "id": "8511ea839b78cae7",
+            "id": "8a1d3442cf1c2f7a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Stuff/SoftwareDesign/Software Design.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Software Design"
             }
           }
         ]
@@ -83,19 +87,8 @@
               "icon": "lucide-file",
               "title": "Linux"
             }
-          },
-          {
-            "id": "cfffdfc67ee41839",
-            "type": "leaf",
-            "state": {
-              "type": "file-tree-view",
-              "state": {},
-              "icon": "sheets-in-box",
-              "title": "File Tree"
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -115,6 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Stuff/SoftwareDesign/Software Design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Software Design"
             }
           },
           {
@@ -215,18 +209,24 @@
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
+      "canvas:Create new canvas": true,
+      "daily-notes:Open today's daily note": true,
+      "templates:Insert template": true,
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "file-tree-alternative:File Tree Alternative Plugin": false,
-      "vscode-editor:Create Code File": false
+      "table-editor-obsidian:Advanced Tables Toolbar": true,
+      "vscode-editor:Create Code File": true,
+      "iconic:Open rulebook": true
     }
   },
-  "active": "8511ea839b78cae7",
+  "active": "8a1d3442cf1c2f7a",
   "lastOpenFiles": [
+    "Stuff/Database/easd.py.md",
+    "Stuff/Linux/Untitled.md",
+    "My code file.py",
+    "My code fileasd.ts",
+    "My code file.yml",
+    "tt.yaml",
     "Stuff/kubernetes/Networking&Services/AdvancedNetworking/Ingress/README.md",
     "Stuff/Database/VACUUM.md",
     "Stuff/Database/test.md",
@@ -255,15 +255,10 @@
     "Stuff/kubernetes/ClusterInstallation/Minikube",
     "Stuff/kubernetes/ClusterInstallation/Kubespray",
     "Stuff/kubernetes/ClusterInstallation/Kubeadm",
-    "Stuff/kubernetes/ClusterInstallation/K3s",
-    "Stuff/kubernetes/ClusterInstallation/installation",
-    "Stuff/kubernetes/ClusterInstallation/Containerd",
-    "Stuff/kubernetes/ClusterInstallation",
     "Stuff/kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
     "Stuff/kubernetes/Workloads&Controllers/Job/README.md",
     "Stuff/kubernetes/Workloads&Controllers/Deployment/README.md",
     "Stuff/kubernetes/Workloads&Controllers/DaemonSet/README.md",
-    "Stuff/kubernetes/Workloads&Controllers/CronJob/README.md",
     "Stuff/kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
     "Stuff/kubernetes/CoreConcepts/Architecture/kube.png",
