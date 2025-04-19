@@ -203,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -221,10 +220,13 @@
   },
   "active": "4ea6ea36efac88e4",
   "lastOpenFiles": [
+    "Stuff/LLM/MCP.md",
+    "README.md",
+    "Stuff/LLM/attachments/Pasted image 20250419194713.png",
+    "Stuff/LLM/attachments",
+    "Stuff/LLM",
     "Stuff/Python/UV.md",
     "Stuff/Hardening/SCA.md",
-    "Untitled",
-    "README.md",
     "Stuff/Hardening",
     "Stuff/Django/Models/CharacterTypes.md",
     "Stuff/Django/Models",
@@ -252,11 +254,8 @@
     "DevOps/README.md",
     "DevOps",
     "Kubernetes.md",
-    "Stuff/Database/Database.md",
-    "Stuff/SoftwareDesign/SoftwareDesign.md",
     "-",
     "Stuff/hhh",
-    "Stuff/DevOps",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",

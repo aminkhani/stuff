@@ -41,6 +41,10 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 - #### 🧪 CI/CD
 - #### 🔍 Monitoring/Logging
 - #### 🔄 Version Control (Git)
+---
+### 🧠 Large Language Model
+
+- #### ⚙️ [MCP](/Stuff/LLM/MCP.md)
 
 ---
 ## 🔗 Connect with Me
