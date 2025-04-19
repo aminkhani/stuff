@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5cd12c0de402aa5d",
+        "id": "550185dd0f5e54a8",
         "type": "tabs",
         "children": [
           {
-            "id": "8d9b37ab690e5cbf",
+            "id": "f33d0bc6c45e3e4d",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Stuff/Python/UV.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "UV"
             }
           }
         ]
@@ -199,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,10 +218,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8d9b37ab690e5cbf",
+  "active": "f33d0bc6c45e3e4d",
   "lastOpenFiles": [
-    "Stuff/DevOps/Kubernetes/README.md",
     "README.md",
+    "Stuff/Python/UV.md",
+    "Stuff/Database/Partitioning.md",
+    "Stuff/Python",
+    "Stuff/Database/VACUUM.md",
+    "Stuff/DevOps/Kubernetes/README.md",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
     "Stuff/SoftwareDesign/SOLID.md",
     "Stuff/SoftwareDesign/WebServer/Nginx.md",
@@ -233,8 +240,6 @@
     "Stuff/Linux/UnixSockets.md",
     "Stuff/Linux/UnixSocket.md",
     "Stuff/Linux/Unix.md",
-    "Stuff/Database/VACUUM.md",
-    "Stuff/Database/Partitioning.md",
     "Stuff/Linux/Socket.md",
     "Stuff/Linux/Linux.md",
     "Stuff/Django/Django.md",
@@ -251,7 +256,6 @@
     "My code file.py",
     "My code fileasd.ts",
     "My code file.yml",
-    "tt.yaml",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",

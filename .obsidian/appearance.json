@@ -1,13 +1,14 @@
 {
-  "cssTheme": "Obsidianite",
+  "cssTheme": "Things",
   "accentColor": "",
   "baseFontSizeAction": true,
-  "baseFontSize": 16,
+  "baseFontSize": 13,
   "textFontFamily": "",
   "interfaceFontFamily": "",
   "nativeMenus": false,
   "showRibbon": true,
   "enabledCssSnippets": [
     "folderIcon"
-  ]
+  ],
+  "theme": "obsidian"
 }
