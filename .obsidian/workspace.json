@@ -92,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316.5,
-    "collapsed": true
+    "width": 316.5
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -204,7 +203,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,8 +219,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8d9b37ab690e5cbf",
+  "active": "4b01253c0d8fbbb2",
   "lastOpenFiles": [
+    "Untitled",
     "README.md",
     "Stuff/SoftwareDesign/SOLID.md",
     "Stuff/SoftwareDesign/WebServer/Nginx.md",
@@ -249,7 +250,6 @@
     "Stuff/SoftwareDesign/Software Design.md",
     "-/-.md",
     "-",
-    "Stuff/hhh/ada.md",
     "Stuff/hhh",
     "Stuff/DevOps",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
