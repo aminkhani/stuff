@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Django/Models/CharacterTypes.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CharacterTypes"
+              "title": "README"
             }
           }
         ]
@@ -92,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 268.5026054382324
+    "width": 217.50260543823242
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -203,7 +203,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -218,10 +219,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4ea6ea36efac88e4",
+  "active": "4b01253c0d8fbbb2",
   "lastOpenFiles": [
-    "README.md",
+    "Stuff/Hardening",
     "Stuff/Django/Models/CharacterTypes.md",
+    "README.md",
     "Stuff/Django/Models",
     "Stuff/Python/UV.md",
     "Stuff/Database/Partitioning.md",
@@ -250,7 +252,6 @@
     "Kubernetes.md",
     "Stuff/Database/Database.md",
     "Stuff/SoftwareDesign/SoftwareDesign.md",
-    "Stuff/SoftwareDesign/Software Design.md",
     "-",
     "Stuff/hhh",
     "Stuff/DevOps",
