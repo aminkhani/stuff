@@ -2,12 +2,13 @@
   "cssTheme": "",
   "accentColor": "",
   "baseFontSizeAction": true,
-  "baseFontSize": 17,
+  "baseFontSize": 18,
   "textFontFamily": "",
   "interfaceFontFamily": "",
   "nativeMenus": false,
   "showRibbon": true,
   "enabledCssSnippets": [
     "folderIcon"
-  ]
+  ],
+  "theme": "obsidian"
 }

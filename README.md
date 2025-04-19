@@ -17,9 +17,15 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 ---
 ### 🐍 Django
 
+- #### 📑 Models
+	- ##### ⌨️ [Character Types](/Stuff/Django/Models/CharacterTypes)
 - #### 🔐 [Authentication](/Stuff/Django/Authentication.md)
 - #### 🔑 [Authorization](/Stuff/Django/Authorization.md)
 	- ##### 🚪 [OAuth](/Stuff/Django/OAuth.md)
+---
+### 🐍 Python
+
+- #### 🚀 [UV](/Stuff/Python/UV.md)
 ---
 ### 🏗️ Software Design
 
