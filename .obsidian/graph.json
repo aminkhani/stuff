@@ -5,10 +5,10 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "",
+      "query": "path:Stuff/Database path:",
       "color": {
         "a": 1,
         "rgb": 14701138
@@ -25,6 +25,6 @@
   "repelStrength": 12.2864491674563,
   "linkStrength": 1,
   "linkDistance": 465,
-  "scale": 2.0707092497453035,
-  "close": true
+  "scale": 0.5359796284077991,
+  "close": false
 }
