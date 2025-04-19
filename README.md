@@ -42,6 +42,10 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 - #### 🔍 Monitoring/Logging
 - #### 🔄 Version Control (Git)
 ---
+### 🔐 Hardening
+
+- #### [SCA](/Stuff/Hardening/SCA.md)
+---
 ### 🧠 Large Language Model
 
 - #### ⚙️ [MCP](/Stuff/LLM/MCP.md)

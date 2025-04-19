@@ -1,37 +1,72 @@
 {
   "collapse-filter": false,
-  "search": "path:Stuff/DevOps  ",
-  "showTags": true,
+  "search": "",
+  "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "path:Stuff/Database",
+      "query": "path:Stuff/Database  ",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 4456703
       }
     },
     {
       "query": "path:Stuff/DevOps  ",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 12418560
+      }
+    },
+    {
+      "query": "path:Stuff/Django  ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:Stuff/Python  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "path:Stuff/Hardening  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:Stuff/LLM  ",
+      "color": {
+        "a": 1,
+        "rgb": 16711816
+      }
+    },
+    {
+      "query": "path:Stuff/Linux  ",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.39083525111683,
-  "lineSizeMultiplier": 2.04885609855151,
-  "collapse-forces": false,
-  "centerStrength": 1,
-  "repelStrength": 12.2864491674563,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 2.34583333333333,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
   "linkStrength": 1,
-  "linkDistance": 465,
-  "scale": 0.19450024518628806,
+  "linkDistance": 250,
+  "scale": 0.7514343028514002,
   "close": true
 }
