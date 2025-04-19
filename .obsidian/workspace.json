@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Hardening/SCA.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SCA"
+              "title": "README"
             }
           }
         ]
@@ -219,15 +219,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b01253c0d8fbbb2",
+  "active": "4ea6ea36efac88e4",
   "lastOpenFiles": [
+    "Stuff/Python/UV.md",
+    "Stuff/Hardening/SCA.md",
     "Untitled",
     "README.md",
-    "Stuff/Hardening/SCA.md",
     "Stuff/Hardening",
     "Stuff/Django/Models/CharacterTypes.md",
     "Stuff/Django/Models",
-    "Stuff/Python/UV.md",
     "Stuff/Database/Partitioning.md",
     "Stuff/Python",
     "Stuff/Database/VACUUM.md",
@@ -257,7 +257,6 @@
     "-",
     "Stuff/hhh",
     "Stuff/DevOps",
-    "My code file.py",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
