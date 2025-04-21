@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "045024fe7140cc4f",
+        "id": "8f021f0d36e75762",
         "type": "tabs",
         "children": [
           {
-            "id": "211e2900811ec6e2",
+            "id": "792e95c474e285a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/LLM/MCP.md",
-                "mode": "source",
+                "file": "Stuff/Database/Issue.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MCP"
+              "title": "Issue"
             }
           }
         ]
@@ -203,7 +203,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -218,13 +219,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "211e2900811ec6e2",
+  "active": "792e95c474e285a6",
   "lastOpenFiles": [
+    "Stuff/LLM/MCP.md",
     "Stuff/Database/Issue.md",
     "Stuff/Hardening/SCA.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
-    "Stuff/LLM/MCP.md",
     "Stuff/LLM",
     "README.md",
     "Stuff/Hardening",
