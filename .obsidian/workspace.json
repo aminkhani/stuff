@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Database/Issue.md",
-                "mode": "preview",
+                "file": "Stuff/Database/ManagingEver‑GrowingTables.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Issue"
+              "title": "ManagingEver‑GrowingTables"
             }
           }
         ]
@@ -221,8 +221,10 @@
   },
   "active": "792e95c474e285a6",
   "lastOpenFiles": [
+    "Stuff/Database/VACUUM.md",
+    "Stuff/Database/ManagingEver‑GrowingTables.md",
+    "Stuff/Database/Partitioning.md",
     "Stuff/LLM/MCP.md",
-    "Stuff/Database/Issue.md",
     "Stuff/Hardening/SCA.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
@@ -232,9 +234,7 @@
     "Stuff/Django/Models/CharacterTypes.md",
     "Stuff/Django/Models",
     "Stuff/Python/UV.md",
-    "Stuff/Database/Partitioning.md",
     "Stuff/Python",
-    "Stuff/Database/VACUUM.md",
     "Stuff/DevOps/Kubernetes/README.md",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
     "Stuff/SoftwareDesign/SOLID.md",
