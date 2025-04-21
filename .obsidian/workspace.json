@@ -249,8 +249,9 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "README.md",
+    "Tasks.md",
     "Stuff/Django/DRF/Djoser.md",
+    "README.md",
     "Stuff/Django/DRF",
     "Stuff/Database/MaterializedView.md",
     "Stuff/Database/Partitioning.md",
@@ -287,7 +288,6 @@
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
     "Stuff/SoftwareDesign/DesignWalkthrugh.md",
     "Stuff/Django/Authorization/OAuth.md",
-    "Stuff/Linux/UnixSocket.md",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
