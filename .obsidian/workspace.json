@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Stuff/Python/IfVsTry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "IfVsTry"
             }
           }
         ],
@@ -249,8 +249,8 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/Linux/DMZ.md",
     "README.md",
+    "Stuff/Linux/DMZ.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/Networking",
     "Stuff/Security/CIA.md",

@@ -28,6 +28,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 ### 🐍 Python
 
 - #### 🚀 [UV](/Stuff/Python/UV.md)
+- #### [IfVsTry](/Stuff/Python/IfVsTry.md)
 ---
 ### 🏗️ Software Design
 
