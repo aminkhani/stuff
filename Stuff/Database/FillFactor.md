@@ -44,3 +44,4 @@ ALTER INDEX your_index SET (
 - PostgreSQL stores data in fixed-size blocks called “pages” (usually 8 KB in size).  
 ### Rows
 - Each row of data is stored within a page. Multiple rows can fit in a single page.
+---
