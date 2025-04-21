@@ -111,7 +111,7 @@ DROP MATERIALIZED VIEW sales_summary_matview;
 ---
 Here are three common ways to keep your materialized view fresh on a schedule
 
-## scheduling
+## 📅 Scheduling
 ### 🕒 1. Using the OS Cron Scheduler
 
 The simplest, built‑in way on Linux/Unix:
