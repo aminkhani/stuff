@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Linux/DMZ.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DMZ"
+              "title": "README"
             }
           }
         ],
@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5026054382324,
-    "collapsed": true
+    "width": 274.5026054382324
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -250,10 +249,10 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/Database/FillFactor.md",
     "Stuff/Linux/DMZ.md",
-    "Stuff/Networking",
     "README.md",
+    "Stuff/Database/FillFactor.md",
+    "Stuff/Networking",
     "Stuff/Security/CIA.md",
     "Stuff/Security/attachments/Pasted image 20250421124726.png",
     "Stuff/Security/attachments",

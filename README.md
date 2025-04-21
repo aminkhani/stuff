@@ -15,6 +15,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 
 - #### 🔌 [Socket](/Stuff/Linux/Socket.md)
 - #### 🧷 [UNIX Sockets](/Stuff/Linux/UnixSockets.md)
+- #### 🌐 [DMZ](/Stuff/Linux/DMZ.md)
 ---
 ### 🐍 Django
 
