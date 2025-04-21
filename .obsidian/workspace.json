@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Database/VACUUM.md",
+                "file": "Stuff/Python/IfVsTry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VACUUM"
+              "title": "IfVsTry"
             }
           }
         ],
@@ -264,9 +264,10 @@
   },
   "active": "ba20cd8745785748",
   "lastOpenFiles": [
+    "Stuff/Database/VACUUM.md",
+    "Stuff/Python/IfVsTry.md",
     "Stuff/Database/Partitioning.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
-    "Stuff/Database/VACUUM.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/LLM/MCP.md",
     "Stuff/Hardening/SCA.md",
@@ -297,7 +298,6 @@
     "Stuff/Linux/Socket.md",
     "Stuff/Linux/Linux.md",
     "Stuff/Django/Django.md",
-    "DevOps/README.md",
     "DevOps",
     "-",
     "Stuff/hhh",
