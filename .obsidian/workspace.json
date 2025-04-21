@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Linux/DMZ.md",
+                "file": "Stuff/Database/Partitioning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DMZ"
+              "title": "Partitioning"
             }
           }
         ],
@@ -249,11 +249,13 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
+    "Stuff/Database/ManagingEver‑GrowingTables.md",
+    "Stuff/Database/Partitioning.md",
+    "Stuff/Linux/DMZ.md",
     "Stuff/Linux/UnixSockets.md",
     "Stuff/LLM/MCP.md",
     "Stuff/Python/IfVsTry.md",
     "README.md",
-    "Stuff/Linux/DMZ.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/Networking",
     "Stuff/Security/CIA.md",
@@ -270,9 +272,7 @@
     "Stuff/Django/Authentication.md",
     "Stuff/Django/Authorization.md",
     "Stuff/Django/Models/CharacterTypes.md",
-    "Stuff/Database/Partitioning.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
-    "Stuff/Database/ManagingEver‑GrowingTables.md",
     "Stuff/Database/VACUUM.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
