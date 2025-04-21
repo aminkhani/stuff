@@ -9,7 +9,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 
 - #### 🔢 [Partitioning](/Stuff/Database/Partitioning.md)
 - #### 🧼 [VACUUM](/Stuff/Database/VACUUM.md)
-- #### [Fill Factor]()
+- #### [Fill Factor](/Stuff/Database/FillFactor.md)
 ---
 ### 🐧 Linux
 
