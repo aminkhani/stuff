@@ -1,4 +1,4 @@
-## Managing Ever‑Growing Tables in Django & PostgreSQL
+# Managing Ever‑Growing Tables in Django & PostgreSQL
 
 When a table just keeps growing without bound, you’ll eventually run into performance, storage, and maintenance headaches. In PostgreSQL + Django the most common "policies" or patterns to adopt are:
 
