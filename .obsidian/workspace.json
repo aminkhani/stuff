@@ -11,10 +11,14 @@
             "id": "211e2900811ec6e2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Stuff/LLM/MCP.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "MCP"
             }
           }
         ]
@@ -88,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 217.50260543823242,
-    "collapsed": true
+    "width": 217.50260543823242
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -217,6 +220,7 @@
   },
   "active": "211e2900811ec6e2",
   "lastOpenFiles": [
+    "Stuff/Database/Issue.md",
     "Stuff/Hardening/SCA.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
