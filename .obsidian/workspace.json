@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Security/CIA.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CIA"
+              "title": "README"
             }
           }
         ],
@@ -250,8 +250,10 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/SoftwareDesign/SOLID.md",
     "Stuff/Security/CIA.md",
+    "Stuff/Security/attachments/Pasted image 20250421124726.png",
+    "Stuff/Security/attachments",
+    "Stuff/SoftwareDesign/SOLID.md",
     "Stuff/Security",
     "Stuff/SoftwareDesign/DesignWalkthrough.md",
     "Stuff/SoftwareDesign/WebServer/WebServer.md",
@@ -285,9 +287,7 @@
     "Stuff/Linux/UnixSocket.md",
     "Stuff/Linux/Unix.md",
     "Stuff/Linux/Socket.md",
-    "Stuff/Linux/Linux.md",
     "DevOps",
-    "-",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
