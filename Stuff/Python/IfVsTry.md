@@ -47,7 +47,7 @@ except KeyError:
 | ----------------------- | ----------- | ---------- |
 | ✅ Common case succeeds | medium cost | low cost   |
 | ❌ Failure (exception)  | medium cost | high cost  |
-> **Rule of thumb:** If you expect failures to be **rare**, prefer `try/except` for cleaner code and faster common‐case. If failures are **common** and cheap to test, `if/else` can be faster overall.
+> [!IMPORTANT] **Rule of thumb:** If you expect failures to be **rare**, prefer `try/except` for cleaner code and faster common‐case. If failures are **common** and cheap to test, `if/else` can be faster overall.
 
 ---
 ## 🏆 Example
