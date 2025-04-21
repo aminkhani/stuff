@@ -80,7 +80,7 @@ In Django you can:
 As tables grow, index bloat and dead tuples creep up.
 - **Tune autovacuum** thresholds so it kicks in early on large tables.
 - Periodically run manual `VACUUM (VERBOSE, ANALYZE) events;` or even `VACUUM FULL` during a maintenance window.
-- Consider a **lower fillfactor** (e.g. 70–80%) if you do a lot of in‑place updates:
+- Consider a **lower [fillfactor](/Stuff/Database/FillFactor)** (e.g. 70–80%) if you do a lot of in‑place updates:
 
 ```sql
 ALTER TABLE events SET (fillfactor = 80);

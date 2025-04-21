@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Database/Fill Factore.md",
-                "mode": "source",
+                "file": "Stuff/Database/ManagingEver‑GrowingTables.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fill Factore"
+              "title": "ManagingEver‑GrowingTables"
             }
           }
         ]
@@ -221,8 +221,8 @@
   },
   "active": "792e95c474e285a6",
   "lastOpenFiles": [
+    "Stuff/Database/FillFactor.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
-    "Stuff/Database/Fill Factore.md",
     "Stuff/Database/VACUUM.md",
     "Stuff/Database/Partitioning.md",
     "Stuff/LLM/MCP.md",
