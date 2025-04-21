@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Database/Partitioning.md",
+                "file": "Stuff/Database/VACUUM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Partitioning"
+              "title": "VACUUM"
             }
           }
         ],
@@ -135,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 323.5026054382324,
-    "collapsed": true
+    "width": 323.5026054382324
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -265,10 +264,10 @@
   },
   "active": "ba20cd8745785748",
   "lastOpenFiles": [
-    "Stuff/Database/FillFactor.md",
-    "Stuff/Database/VACUUM.md",
     "Stuff/Database/Partitioning.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
+    "Stuff/Database/VACUUM.md",
+    "Stuff/Database/FillFactor.md",
     "Stuff/LLM/MCP.md",
     "Stuff/Hardening/SCA.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
