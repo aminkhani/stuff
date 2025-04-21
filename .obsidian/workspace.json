@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "847c76d17195d8c0",
+        "id": "045024fe7140cc4f",
         "type": "tabs",
         "children": [
           {
-            "id": "933c15487a66dd73",
+            "id": "211e2900811ec6e2",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -88,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316.5
+    "width": 217.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -214,19 +215,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "933c15487a66dd73",
+  "active": "211e2900811ec6e2",
   "lastOpenFiles": [
-    "Stuff/DevOps/Kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
-    "README.md",
     "Stuff/Hardening/SCA.md",
-    "Stuff/LLM/MCP.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
+    "Stuff/LLM/MCP.md",
     "Stuff/LLM",
-    "Stuff/Python/UV.md",
+    "README.md",
     "Stuff/Hardening",
     "Stuff/Django/Models/CharacterTypes.md",
     "Stuff/Django/Models",
+    "Stuff/Python/UV.md",
     "Stuff/Database/Partitioning.md",
     "Stuff/Python",
     "Stuff/Database/VACUUM.md",
