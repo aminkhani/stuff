@@ -14,9 +14,9 @@ A DMZ is a subnetwork that sits **between** an **internal trusted network** and 
 On a Linux gateway or firewall, you implement a DMZ by defining network interfaces and crafting rules—often with `iptables` or `firewalld`—to segregate zones.
 
 #### Network Interfaces
-    - `eth0` → Internet (untrusted)
-    - `eth1` → DMZ network (e.g., 192.168.10.0/24)
-    - `eth2` → Internal LAN (e.g., 10.0.0.0/24)
+- `eth0` → Internet (untrusted)
+- `eth1` → DMZ network (e.g., 192.168.10.0/24)
+- `eth2` → Internal LAN (e.g., 10.0.0.0/24)
 #### iptables Example
 
 ```bash
