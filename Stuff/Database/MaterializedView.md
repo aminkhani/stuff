@@ -183,5 +183,5 @@ REFRESH MATERIALIZED VIEW CONCURRENTLY sales_summary_matview;
 - 🔄 **CONCURRENTLY** lets people keep querying the view during refresh—but **needs** a unique index on all rows.
 - ⏱️ Pick a schedule that balances freshness vs. load.
 - 📈 Monitor run times (via logs or `cron.job_run_details` in pg_cron) to catch failures.
-    
-With one of these in place, your materialized view will stay up‑to‑date automatically—no manual REFRESH required!
+---
+> With one of these in place, your materialized view will stay up‑to‑date automatically—no manual REFRESH required!

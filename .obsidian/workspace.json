@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Database/MaterializedView.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MaterializedView"
+              "title": "README"
             }
           }
         ],
@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5026054382324,
-    "collapsed": true
+    "width": 274.5026054382324
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -250,14 +249,14 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/Database/Partitioning.md",
     "Stuff/Database/MaterializedView.md",
+    "README.md",
+    "Stuff/Database/Partitioning.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
     "Stuff/Linux/DMZ.md",
     "Stuff/Linux/UnixSockets.md",
     "Stuff/LLM/MCP.md",
     "Stuff/Python/IfVsTry.md",
-    "README.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/Networking",
     "Stuff/Security/CIA.md",
