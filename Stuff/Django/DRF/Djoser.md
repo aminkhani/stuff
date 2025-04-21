@@ -106,6 +106,6 @@ DJOSER = {
 - 🔄 **Fully DRF‑compatible**—plugs into your existing API.
 - ⚙️ **Highly configurable**—override only what you need.
 ---
-## 🔗 Read More:
+## 🔗 Read More
 
 - https://www.youtube.com/watch?v=QO8UyXWNg-k
