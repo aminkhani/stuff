@@ -132,7 +132,7 @@ python client.py
 📩 Received request for: gRPC Learner
 📤 Sending response: Hello, gRPC Learner!
 ```
-### ✅ Summary
+## ✅ Summary
 
 - **gRPC** is ideal for strongly‑typed, high‑performance RPC between services.
 - Use it when you need **efficient** binary payloads, **streaming**, or **multi‑language** stubs.
