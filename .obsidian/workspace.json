@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/SoftwareDesign/Scrum/UserStory.md",
+                "file": "Stuff/Python/FlakyTest.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UserStory"
+              "title": "FlakyTest"
             }
           }
         ],
@@ -250,8 +250,9 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/SoftwareDesign/SDLC.md",
     "Stuff/SoftwareDesign/Scrum/UserStory.md",
+    "Stuff/Python/FlakyTest.md",
+    "Stuff/SoftwareDesign/SDLC.md",
     "Stuff/SoftwareDesign/Scrum",
     "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
     "Stuff/SoftwareDesign/attachments",
@@ -283,7 +284,6 @@
     "Stuff/Hardening/SCA.md",
     "Stuff/Django/OAuth.md",
     "Stuff/Django/Authentication.md",
-    "Stuff/Django/Authorization.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
