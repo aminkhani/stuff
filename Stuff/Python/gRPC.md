@@ -1,3 +1,12 @@
+```table-of-contents
+title: Table of Contents 
+style: nestedList # TOC style (nestedList|nestedOrderedList|inlineFirstLevel)
+minLevel: 0 # Include headings from the specified level
+maxLevel: 0 # Include headings up to the specified level
+includeLinks: true # Make headings clickable
+hideWhenEmpty: false # Hide TOC if no headings are found
+debugInConsole: false # Print debug info in Obsidian console
+```
 ## 💡 What is gRPC?
 
 - **gRPC** is a high‑performance, open‑source RPC (Remote Procedure Call) framework originally developed by Google.    
@@ -81,3 +90,58 @@ def serve():
 if __name__ == "__main__":
     serve()
 ```
+### 5. Implement the Client
+```python
+# client.py
+import grpc
+import greeter_pb2, greeter_pb2_grpc
+
+def run():
+    channel = grpc.insecure_channel("localhost:50051")
+    stub = greeter_pb2_grpc.GreeterStub(channel)
+    name = "gRPC Learner"
+    print(f"📨 Sending request with name: {name}")
+    response = stub.SayHello(greeter_pb2.HelloRequest(name=name))
+    print(f"📬 Received response: {response.message}")
+
+if __name__ == "__main__":
+    run()
+```
+---
+## ▶️ Running the Example
+
+### 1. Start the server
+```bash
+python server.py
+```
+**Console output**:
+```bash
+🟢 Server started on port 50051
+```
+### 2. Run the client
+```bash
+python client.py
+```
+**Console output**:
+```bash
+📨 Sending request with name: gRPC Learner
+📬 Received response: Hello, gRPC Learner!
+```
+### 3. Server logs the interaction
+```bash
+📩 Received request for: gRPC Learner
+📤 Sending response: Hello, gRPC Learner!
+```
+### ✅ Summary
+
+- **gRPC** is ideal for strongly‑typed, high‑performance RPC between services.
+- Use it when you need **efficient** binary payloads, **streaming**, or **multi‑language** stubs.
+- In Python, you:
+    1. Write a `.proto` file
+    2. Generate gRPC code
+    3. Implement server & client
+    4. Run & enjoy emoji‑decorated logs!
+
+Feel free to extend this with streaming RPCs, authentication, TLS, or integrate into frameworks like **FastAPI** or **Django**. Happy gRPC’ing! 🚀
+
+---

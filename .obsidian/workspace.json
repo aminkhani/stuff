@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Python/gRPC.md",
+                "file": "Stuff/SoftwareDesign/SDLC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gRPC"
+              "title": "SDLC"
             }
           }
         ],
@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5026054382324,
-    "collapsed": true
+    "width": 274.5026054382324
   },
   "right": {
     "id": "2edbb5308d68efe2",
@@ -251,8 +250,11 @@
   },
   "active": "452533a2e25d51a9",
   "lastOpenFiles": [
-    "Stuff/Linux/Service.md",
+    "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
+    "Stuff/SoftwareDesign/attachments",
     "Stuff/Python/gRPC.md",
+    "Stuff/SoftwareDesign/SDLC.md",
+    "Stuff/Linux/Service.md",
     "Stuff/Linux/Socket.md",
     "Stuff/Django/DRF/Djoser.md",
     "Tasks.md",
@@ -280,16 +282,13 @@
     "Stuff/Django/OAuth.md",
     "Stuff/Django/Authentication.md",
     "Stuff/Django/Authorization.md",
-    "Stuff/Django/Models/CharacterTypes.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
-    "Stuff/Database/VACUUM.md",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
     "Stuff/LLM",
     "Stuff/Hardening",
     "Stuff/Django/Models",
     "Stuff/Python",
-    "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
