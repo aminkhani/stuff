@@ -114,3 +114,8 @@ Use `netcat` or `telnet` to test socket connections:
 nc -l 1234
 ```
 ---
+
+### Read More
+
+- https://docs.python.org/3/library/socket.html
+- https://realpython.com/python-sockets/
