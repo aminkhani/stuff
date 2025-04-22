@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Python/gRPC.md",
+                "file": "Stuff/Python/gRPCTips.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gRPC"
+              "title": "gRPCTips"
             }
           }
         ]
@@ -221,6 +221,8 @@
   },
   "active": "e32f077c3171bc9c",
   "lastOpenFiles": [
+    "Stuff/Python/gRPC.md",
+    "Stuff/Python/gRPCTips.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
     "Stuff/Python/FlakyTest.md",
@@ -229,7 +231,6 @@
     "Stuff/SoftwareDesign/Scrum",
     "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
     "Stuff/SoftwareDesign/attachments",
-    "Stuff/Python/gRPC.md",
     "Stuff/Linux/Service.md",
     "Stuff/Linux/Socket.md",
     "Stuff/Django/DRF/Djoser.md",
@@ -254,7 +255,6 @@
     "Stuff/Python/UV.md",
     "Stuff/Hardening/SCA.md",
     "Stuff/Django/OAuth.md",
-    "Stuff/Django/Authentication.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
