@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Python/gRPCTips.md",
+                "file": "Stuff/Python/Futures.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gRPCTips"
+              "title": "Futures"
             }
           }
         ]
@@ -203,8 +203,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5,
-    "collapsed": true
+    "width": 326.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -221,8 +220,9 @@
   },
   "active": "e32f077c3171bc9c",
   "lastOpenFiles": [
-    "Stuff/Python/gRPC.md",
     "Stuff/Python/gRPCTips.md",
+    "Stuff/Python/Futures.md",
+    "Stuff/Python/gRPC.md",
     "Stuff/Database/FillFactor.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
     "Stuff/Python/FlakyTest.md",
@@ -254,7 +254,6 @@
     "Stuff/SoftwareDesign/WebServer/Nginx.md",
     "Stuff/Python/UV.md",
     "Stuff/Hardening/SCA.md",
-    "Stuff/Django/OAuth.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/LLM/attachments",
