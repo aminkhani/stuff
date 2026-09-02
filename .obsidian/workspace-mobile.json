@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "README.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -117,7 +117,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Untitled.md",
+            "file": "README.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -172,10 +172,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "98f26182554b875b",
+  "active": "1c564114adf329a2",
   "lastOpenFiles": [
-    "Stuff/Hardening/SCA.md",
     "README.md",
+    "Stuff/Hardening/SCA.md",
     "Stuff/Security/Cybersecutity Framework.md",
     "Stuff/DevOps/Kubernetes/README.md",
     "Stuff/Django/OAuth.md",
