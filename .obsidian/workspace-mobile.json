@@ -131,26 +131,12 @@
         }
       },
       {
-        "id": "0d33135a4dd98e2b",
-        "type": "leaf",
-        "state": {
-          "type": "outgoing-link",
-          "state": {
-            "file": "Untitled.md",
-            "linksCollapsed": false,
-            "unlinkedCollapsed": true
-          },
-          "icon": "links-going-out",
-          "title": "Outgoing links"
-        }
-      },
-      {
         "id": "68041c80fc3f60cf",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "Untitled.md",
+            "file": "README.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -170,7 +156,7 @@
         }
       }
     ],
-    "currentTab": 3
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,7 +172,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1c564114adf329a2",
+  "active": "98f26182554b875b",
   "lastOpenFiles": [
     "Stuff/Hardening/SCA.md",
     "README.md",
