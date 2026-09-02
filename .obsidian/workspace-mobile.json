@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "ae1545c29b16d754",
+    "id": "a7dce999b727aa46",
     "type": "split",
     "children": [
       {
-        "id": "e61f65f79e1d15ce",
+        "id": "001075c5b566e128",
         "type": "tabs",
         "children": [
           {
-            "id": "22c5f4591d136985",
+            "id": "ca6c14a65cb0a1aa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Vacuum process.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Vacuum process"
+              "title": "New tab"
             }
           }
         ]
@@ -27,24 +23,26 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8f8624d7149cd759",
+    "id": "320255c70b3edcad",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "a49e7f291d506e4b",
+        "id": "4210d6b2339da64d",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical",
-            "autoReveal": false
+            "autoReveal": false,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-folder-closed",
           "title": "Files"
         }
       },
       {
-        "id": "0fc2911a895c02f0",
+        "id": "8725835a7c310716",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,7 +59,7 @@
         }
       },
       {
-        "id": "59ff2647274583be",
+        "id": "f5379d62ccb3098a",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -76,11 +74,28 @@
         }
       },
       {
-        "id": "a6121e9d015cf5e5",
+        "id": "dec7aa4ed43fc98d",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "All properties"
+        }
+      },
+      {
+        "id": "3c54de77ed87e25a",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
-          "state": {},
+          "state": {
+            "showSearch": false,
+            "searchQuery": ""
+          },
           "icon": "lucide-bookmark",
           "title": "Bookmarks"
         }
@@ -89,16 +104,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "fe31d8b554c3ae1b",
+    "id": "0e51e1fd477aac18",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "9de759acced8336c",
+        "id": "ae7a8d411aa68982",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Vacuum process.md",
+            "file": "Untitled.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -112,12 +127,12 @@
         }
       },
       {
-        "id": "f6365894b881cc77",
+        "id": "0d33135a4dd98e2b",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Vacuum process.md",
+            "file": "Untitled.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -126,12 +141,12 @@
         }
       },
       {
-        "id": "65af3d7e630f028a",
+        "id": "68041c80fc3f60cf",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "Vacuum process.md",
+            "file": "Untitled.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -141,7 +156,7 @@
         }
       },
       {
-        "id": "1801de629fbe9f38",
+        "id": "98f26182554b875b",
         "type": "leaf",
         "state": {
           "type": "git-view",
@@ -155,20 +170,64 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "vscode-editor:Create Code File": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "22c5f4591d136985",
+  "active": "4210d6b2339da64d",
   "lastOpenFiles": [
-    "📁Stuff/Database/Vacuum.md",
-    "Vacuum process.md",
-    "Partitioning.md",
-    "📁Stuff/Database/Database.md"
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job/sleep-20s.yml",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job/Readme.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
+    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/Untitled.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/README.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/HeadlessService/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/uuidgen.yml",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Deployment/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/DaemonSet/simple-daemonset.yml",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/DaemonSet/nginx.yml",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/DaemonSet/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/wget-15min.yml",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/CronJob/README.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/NodePort/README.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/LoadBalancer/README.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/ClusterIP/README.md",
+    "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
+    "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kube.png",
+    "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kube-architecture.png",
+    "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/README.md",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/installation/helm-install.sh",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.md",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/Kubespray/kubespray.md",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/Kubeadm/kubeadm.md",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.png",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/K3s/k3s.md",
+    "Stuff/DevOps/Kubernetes/ClusterInstallation/Containerd/containerd.md",
+    "Stuff/DevOps/Kubernetes/Backup&DisasterRecovery/Velero/README.md",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/README.md",
+    "Stuff/DevOps/Kubernetes/Networking&Services/README.md",
+    "Stuff/DevOps/Kubernetes/Multi-ContainerPatterns/README.md",
+    "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
+    "Stuff/SoftwareDesign/WebServer/WebServer.md",
+    "Stuff/SoftwareDesign/WebServer/Nginx.md",
+    "Stuff/SoftwareDesign/Scrum/UserStory.md",
+    "Stuff/Security/attachments/Pasted image 20250421124726.png",
+    "Stuff/LLM/attachments/Pasted image 20250419194713.png",
+    "Stuff/Django/Models/CharacterTypes.md",
+    "LICENSE",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/ReplicaSet/replicaset",
+    "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job",
+    "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress"
   ]
 }
