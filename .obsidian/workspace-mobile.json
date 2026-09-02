@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ca6c14a65cb0a1aa",
+            "id": "1c564114adf329a2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -182,8 +186,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4210d6b2339da64d",
+  "active": "1c564114adf329a2",
   "lastOpenFiles": [
+    "Stuff/Hardening/SCA.md",
+    "README.md",
+    "Stuff/Security/Cybersecutity Framework.md",
+    "Stuff/DevOps/Kubernetes/README.md",
+    "Stuff/Django/OAuth.md",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/ReplicaSet/replicaset/README.md",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job/sleep-20s.yml",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job/Readme.md",
@@ -217,14 +226,9 @@
     "Stuff/DevOps/Kubernetes/Backup&DisasterRecovery/Velero/README.md",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/README.md",
     "Stuff/DevOps/Kubernetes/Networking&Services/README.md",
-    "Stuff/DevOps/Kubernetes/Multi-ContainerPatterns/README.md",
     "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
-    "Stuff/SoftwareDesign/WebServer/WebServer.md",
-    "Stuff/SoftwareDesign/WebServer/Nginx.md",
-    "Stuff/SoftwareDesign/Scrum/UserStory.md",
     "Stuff/Security/attachments/Pasted image 20250421124726.png",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
-    "Stuff/Django/Models/CharacterTypes.md",
     "LICENSE",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/ReplicaSet/replicaset",
     "Stuff/DevOps/Kubernetes/Workloads&Controllers/Job/paralel-job",
