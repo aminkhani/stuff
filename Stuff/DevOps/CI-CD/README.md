@@ -19,12 +19,10 @@ Three different ideas sharing one acronym — and interviewers ask precisely bec
 An **airport baggage system 🧳**: CI is every bag going through the same scanner the moment it is checked in; Continuous Delivery is bags queued at the aircraft door, cleared to load; Continuous Deployment is the belt loading them with nobody watching. The distinction is not pedantry — "we do CI/CD" while merging month-old branches is just a build server.
 ---
 ## 💡 Why do we need it?
-- 🔀 **Merge pain grows with branch age** — integrating daily keeps conflicts small; integrating monthly turns them into a project.
+- 🔀 **Small batches beat big ones twice** — merge pain grows with branch age (daily integration keeps conflicts trivial, monthly integration is a project), and a 3-commit deploy is diagnosable where a quarterly 400-commit release is a bisect problem with an audience.
 - 🧪 **The machine finds the bug minutes after it is written**, while the author still has the context. Fixing then costs a fraction of fixing after release.
 - 📦 **One reproducible artifact** — built once from a known commit, and *that digest* runs in every environment, so "it passed on staging" finally means something ([Docker](../Docker/README.md)).
-- 🕰️ **Small, boring releases** — a 3-commit deploy is diagnosable; a quarterly 400-commit release is a bisect problem with an audience.
 - 🔐 **A place to enforce policy, and the audit trail that proves it** — lint, tests, dependency/container scanning, signing and `check --deploy` become gates nobody can "forget" ([SCA](../../Hardening/SCA.md), [OPA](../OPA/README.md)), while "who changed what, which tests passed, who approved production" is just pipeline metadata — half of an [SDLC](../../SoftwareDesign/SDLC.md) control set for free.
-
 ---
 ## ⚙️ How it works — pipeline anatomy
 
@@ -54,8 +52,8 @@ The machine that executes a job — and both of its axes matter:
 |---|---|---|
 | Purpose | make a job *faster* | pass output *forward*, or keep it for humans |
 | Content | reproducible, disposable (`~/.cache/pip`, `.venv`, `node_modules`) | build output, coverage XML, JUnit report, the image digest |
-| If it vanishes | the build is slower, still correct | the pipeline is broken |
 | Trust | **untrusted** — attacker-writable input if any job can poison it | produced by a known job from a known SHA |
+| If it vanishes | the build is slower, still correct | the pipeline is broken |
 
 Never cache what you cannot regenerate, key the cache on the lockfile (`requirements.txt` / `uv.lock`) so a dependency bump invalidates it, and **never cache credentials, `.git/config` or `.netrc`** — a poisoned cache is a supply-chain attack with a friendly name.
 ---
@@ -132,7 +130,6 @@ Rule of thumb: **use whatever your forge already provides** — the integration 
 - ❌ **A pipeline built on flaky tests.** Two red builds that pass on re-run and the team learns to click "retry" — at which point the gate is decorative and a real regression ships. Quarantine and fix them; never `pytest --reruns` your way out ([Flaky Tests](../../Python/FlakyTest.md)).
 - ❌ **A pipeline nobody waits for.** Past ~10 minutes people push and context-switch, so failures land after the author has moved on. Parallelise, split by test type, cache dependencies, and run the 40-minute e2e suite nightly or pre-merge — not on every commit.
 - ❌ **400 lines of shell inside YAML.** Vendor YAML is untestable, unrunnable locally, un-lintable and un-portable. Put the logic in `scripts/deploy.sh` or a `Makefile` **that the repo owns and any developer can run**; the pipeline should only decide *when* to call it. It is also the cheapest migration insurance you will ever buy.
-
 ---
 ## 🔐 Security notes & production hardening
 
@@ -174,7 +171,7 @@ docker push "$IMAGE:$GIT_SHA"                         # then promote THIS tag/di
 - **`makemigrations --check --dry-run` is the highest-value one-line gate in a Django pipeline** — it catches "model edited, migration forgotten", a bug that is invisible locally (your dev DB already has the column) and fatal in production.
 - **Order of operations at deploy:** push image → run `migrate` **once** as a one-shot job/`Job` on the *new* image → then roll out replicas. Never migrate from the container entrypoint: N replicas start simultaneously and race. `collectstatic` belongs to the image build ([Docker](../Docker/README.md)).
 - **Test against real Postgres, not SQLite** — constraint timing, `JSONField`/array behaviour, `select_for_update` and migration SQL all differ, so a green SQLite suite proves little. Run it as a pipeline **service** container, and keep the suite deterministic ([Flaky Tests](../../Python/FlakyTest.md)).
-- **`check --deploy` only tells the truth with production-like settings** — point `DJANGO_SETTINGS_MODULE` at the real settings module with `DEBUG=False`, or it silently passes.
+
 
 > [!NOTE]
 > **Windows:** a shell script authored on Windows and committed with **CRLF** dies on a Linux runner with `$'\r': command not found` or a silently mangled last argument. Commit `*.sh text eol=lf` in `.gitattributes` ([Git](../Git/README.md)) — the runner will not fix it for you.
@@ -184,12 +181,9 @@ docker push "$IMAGE:$GIT_SHA"                         # then promote THIS tag/di
 | Concept | Takeaway |
 |---|---|
 | CI vs CD vs CD | Integrate daily and test every merge → every green commit is *releasable* → it deploys itself |
-| Pipeline design | trigger → stage → job → step; cheap checks first, and one commit SHA per run |
+| Pipeline design | trigger → stage → job → step; cheapest checks first, one commit SHA per run, logic in scripts the repo owns |
 | Artifacts | Build **once**, promote the same digest across environments; cache for speed, artifacts for correctness |
-| Runners | Ephemeral and least-privileged, because a runner holds production credentials |
 | Deploying | Rolling by default, blue-green for instant rollback, canary with real metrics, flags to decouple risk |
 | Migrations | Expand → backfill → switch → contract, across **separate releases**; never destructive in the same release |
-| Security | OIDC over static keys, pin by digest, no secrets for fork PRs, sign + verify, CODEOWNERS on the pipeline |
+| Security | Ephemeral least-privilege runners, OIDC over static keys, pin by digest, no secrets for fork PRs, sign + verify, CODEOWNERS on the pipeline |
 | Outcome | DORA's four keys, and GitOps when you want pull-based, self-healing delivery |
-
-
