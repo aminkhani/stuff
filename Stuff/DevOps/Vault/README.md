@@ -11,6 +11,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ## 🧩 What is HashiCorp Vault?
 
 **Vault** is an identity-aware **secrets manager**: one HTTP API that keeps secrets encrypted at rest, **issues short-lived credentials on demand**, and records every access in an **audit log**. Engines, auth methods, secrets and system config are all just **paths** (`secret/myapp/db`, `database/creds/app`) that a policy either allows or denies. Think **hotel front desk 🏨** instead of a shared house key: you show ID, you get a keycard that opens one room and expires at checkout, and the desk keeps a record of every card it ever issued.
+
 ---
 ## 💡 Why do we need it? — secret sprawl & secret zero
 
@@ -33,8 +34,8 @@ auth (approle | k8s | oidc) --> token{ policies, TTL } --> request a path
 1. **Storage backend** only ever sees ciphertext. **Integrated Storage (Raft)** is today's default: data on each node's own disk, HA through Raft consensus, one system to operate. **Consul** still works, but you then run and back up two clusters.
 2. **Barrier** — every write is encrypted with the **encryption key**, which is itself encrypted by the **master key**. A **sealed** Vault holds the ciphertext and no way to read it; it answers nothing except `sys/health` and `sys/seal-status`.
 3. **Unseal** rebuilds the master key. `vault operator init` uses **Shamir's Secret Sharing** to split it into N shares with threshold K (default 5/3), so K different people must paste a share after *every* restart. **Auto-unseal** delegates that to cloud KMS, an HSM, or a Transit mount on another Vault — effectively mandatory in production, because pods restart at 03:00.
-4. **Root token** comes out of `init`: unlimited, policy-free, no expiry. Save the unseal/recovery shares, then **revoke it** (`vault token revoke <root>`) and log in as a human through OIDC or userpass. Regenerate it only for break-glass with `vault operator generate-root`, which needs a quorum of shares.
-5. **Tokens** carry policies and a **TTL**; child tokens die with their parent. **Leases** wrap dynamic secrets — `vault lease renew` extends, `vault lease revoke` kills early, and at expiry **Vault destroys the underlying credential** (drops the DB user, revokes the cert). "My password suddenly stopped working" becomes a normal event your app must handle.
+	1. **Root token** comes out of `init`: unlimited, policy-free, no expiry. Save the unseal/recovery shares, then **revoke it** (`vault token revoke <root>`) and log in as a human through OIDC or userpass. Regenerate it only for break-glass with `vault operator generate-root`, which needs a quorum of shares.
+4. **Tokens** carry policies and a **TTL**; child tokens die with their parent. **Leases** wrap dynamic secrets — `vault lease renew` extends, `vault lease revoke` kills early, and at expiry **Vault destroys the underlying credential** (drops the DB user, revokes the cert). "My password suddenly stopped working" becomes a normal event your app must handle.
 ---
 ## 🗄️ Secrets engines — and why you'd pick each
 

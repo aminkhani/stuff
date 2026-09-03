@@ -91,15 +91,12 @@ var NinjaCursorForWindow = class {
         datumTop = datumElement.getBoundingClientRect().top;
         const selection = aw.getSelection();
         if (!selection) {
-          console.log("Could not find selection");
           return;
         }
-        if (selection.rangeCount == 0)
-          return;
+        if (selection.rangeCount == 0) return;
         const range = selection.getRangeAt(0);
         let rect = range == null ? void 0 : range.getBoundingClientRect();
         if (!rect) {
-          console.log("Could not find range");
           return;
         }
         if (rect.x == 0 && rect.y == 0) {
@@ -114,7 +111,6 @@ var NinjaCursorForWindow = class {
             const textRects = textRange.getClientRects();
             const tempRect = textRects.item(textRects.length - 1);
             if (!tempRect) {
-              console.log("Could not found");
               return;
             }
             textRect = tempRect;
@@ -156,37 +152,35 @@ var NinjaCursorForWindow = class {
           this.lastPos = rect;
           return;
         }
-        aw.requestAnimationFrame((time) => {
+        aw.requestAnimationFrame(() => {
           this.cursorElement.className = `x-cursor x-cursor${this.styleCount}`;
           this.lastPos = rect;
         });
-      } catch (ex) {
-        console.log(ex);
+      } catch (e2) {
       }
     };
     const supportVIMMode = true;
     const eventNames = ["keydown", "mousedown", "touchend", ...supportVIMMode ? ["keyup", "mouseup", "touchstart"] : []];
     for (const event of eventNames) {
       registerDomEvent(aw, event, (ev) => {
-        moveCursor(ev);
+        void moveCursor(ev);
       });
     }
     let triggered = false;
     const applyWheelScroll = (last) => {
       if (!triggered) {
-        requestAnimationFrame(() => {
+        aw.requestAnimationFrame(() => {
           if (datumElement) {
             try {
               const curTop = datumElement.getBoundingClientRect().top;
               const diff = curTop - datumTop;
               styleRoot.style.setProperty("--cursor-offset-y", `${diff}px`);
               if (last === false || last != diff) {
-                requestAnimationFrame(() => applyWheelScroll(diff));
+                aw.requestAnimationFrame(() => applyWheelScroll(diff));
               } else if (last == diff) {
-                moveCursor(void 0, true);
+                void moveCursor(void 0, true);
               }
-            } catch (ex) {
-              console.log(ex);
+            } catch (e) {
             }
           }
           triggered = false;
@@ -194,7 +188,7 @@ var NinjaCursorForWindow = class {
         triggered = true;
       }
     };
-    registerDomEvent(aw, "wheel", (e) => {
+    registerDomEvent(aw, "wheel", () => {
       applyWheelScroll(false);
     });
   }
@@ -213,10 +207,12 @@ var NinjaCursorPlugin = class extends import_obsidian.Plugin {
     super(...arguments);
     this.Cursors = [];
   }
-  async onload() {
+  onload() {
+    void this.onloadAsync();
+  }
+  async onloadAsync() {
     await this.loadSettings();
     this.registerEvent(this.app.workspace.on("window-open", (win) => {
-      console.log("Open by window-open");
       const exist = this.Cursors.find((e) => e.bufferedWindow == win.win);
       if (!exist) {
         const w2 = new NinjaCursorForWindow(this, win.win, win.doc, this.registerDomEvent.bind(this));
@@ -230,8 +226,7 @@ var NinjaCursorPlugin = class extends import_obsidian.Plugin {
         this.Cursors.remove(target);
       }
     }));
-    console.log("Open by init");
-    const w = new NinjaCursorForWindow(this, window, document, this.registerDomEvent.bind(this));
+    const w = new NinjaCursorForWindow(this, window, activeDocument, this.registerDomEvent.bind(this));
     this.Cursors.push(w);
     this.addSettingTab(new ObsidianLiveSyncSettingTab(this.app, this));
   }
@@ -258,8 +253,8 @@ var ObsidianLiveSyncSettingTab = class extends import_obsidian.PluginSettingTab 
   display() {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h2", { text: "Settings for Ninja-cursor" });
-    containerEl.createEl("h3", { text: "React to interactions on limited elements" });
+    new import_obsidian.Setting(containerEl).setName("Ninja-cursor").setHeading();
+    new import_obsidian.Setting(containerEl).setName("React to interactions on limited elements").setHeading();
     containerEl.createDiv("", (el) => {
       el.textContent = "If nothing is configured, react to all.";
     });
