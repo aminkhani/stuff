@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/DevOps/OPA/README.md",
+                "file": "Stuff/DevOps/Vault/README.md",
                 "mode": "preview",
                 "source": false
               },
@@ -224,11 +224,11 @@
   },
   "active": "201f1a84eae9f0a2",
   "lastOpenFiles": [
-    "Stuff/Security/ISO27001.md.tmp.15076.4294a74f480c",
+    "Stuff/DevOps/OPA/README.md",
     "README.md",
+    "Stuff/Security/ISO27001.md.tmp.15076.4294a74f480c",
     "Stuff/DevOps/Git/README.md",
     "Stuff/Security/ISO27001.md",
-    "Stuff/DevOps/OPA/README.md",
     "Stuff/SoftwareDesign/APIGateway.md",
     "Stuff/Security/AccessControl.md",
     "Stuff/SoftwareDesign/LoadBalancer.md",
@@ -261,7 +261,6 @@
     "Stuff/Networking",
     "Stuff/Security/attachments/Pasted image 20250421124726.png",
     "Stuff/Security/attachments",
-    "Stuff/Security",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/LLM/attachments/Pasted image 20250419194713.png",
     "Stuff/DevOps/Kubernetes/ClusterInstallation/Minikube/minikube.png",
