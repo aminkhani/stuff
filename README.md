@@ -134,6 +134,7 @@ Hey there! I'm on an exciting path of growth and curiosity as I expand my skills
 - [ ] Secure coding practices & code review checklists
 - [ ] SAST/DAST tools (Bandit, Semgrep, OWASP ZAP)
 - [ ] API security (JWT best practices, OAuth2 scopes, API keys, mTLS for services)
+	- 
 - [ ] Encryption fundamentals (symmetric vs. asymmetric, hashing, salting, key management/KMS)
 - [ ] Security headers (CSP, HSTS, X-Frame-Options)
 - [ ] WAF concepts & configuration
