@@ -4,25 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "001075c5b566e128",
+        "id": "bd8af0cc1375fe4c",
         "type": "tabs",
         "children": [
           {
-            "id": "1c564114adf329a2",
+            "id": "487a22c6fa303f3f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Stuff/Database/MaterializedView.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "MaterializedView"
             }
           },
           {
-            "id": "41a7d2de11b52a48",
+            "id": "660b3f7892956efc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SQL Joins.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SQL Joins"
+            }
+          },
+          {
+            "id": "37d0e58f55289fa4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -201,9 +215,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "41a7d2de11b52a48",
+  "active": "37d0e58f55289fa4",
   "lastOpenFiles": [
     "Untitled.md",
+    "SQL Joins.md",
+    "Stuff/Database/MaterializedView.md",
+    "Stuff/Database/Normalization vs Denormalization.md",
+    "Stuff/Database/Database Indexing.md",
+    "Stuff/Database/CAP Theorem.md",
+    "Stuff/SoftwareDesign/KafkaVsRabbitMQ.md",
+    "Stuff/Database/Database Transactions.md",
     "README.md",
     "Stuff/SoftwareDesign/Scrum/UserStory.md",
     "Stuff/SoftwareDesign/WebServer/WebServer.md",
@@ -222,13 +243,6 @@
     "Stuff/Security/API Security.md",
     "Stuff/Security/AccessControl.md",
     "Stuff/Python/UV.md",
-    "Stuff/Python/IfVsTry.md",
-    "Stuff/Python/gRPCTips.md",
-    "Stuff/Python/gRPC.md",
-    "Stuff/Python/Futures.md",
-    "Stuff/Python/FlakyTest.md",
-    "Stuff/Linux/Socket.md",
-    "Stuff/Linux/DMZ.md",
     "/Stuff/Security",
     "/Stuff/DevOps/Vault",
     "/Stuff/DevOps",

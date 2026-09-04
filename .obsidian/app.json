@@ -16,5 +16,6 @@
     "downscalePercent": 100
   },
   "showUnsupportedFiles": true,
-  "rightToLeft": false
+  "rightToLeft": false,
+  "spellcheck": false
 }

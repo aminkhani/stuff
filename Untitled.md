@@ -1,127 +1,150 @@
----
-tags: [backend, messaging, kafka, rabbitmq, architecture]
-created: 2026-09-04
----
 
-# 📨 Kafka vs RabbitMQ — Quick Reference
+# 🗺️ Query Execution Plans — Quick Reference
 
 > [!tldr] TL;DR
-> - **RabbitMQ** = smart broker, simple routing, great for **task queues / job processing** 🐰
-> - **Kafka** = distributed log, built for **high-throughput event streaming & replay** 🔥
-> - Both solve the same core problem: **decoupling services** so they don't talk to each other directly.
+> An **execution plan** is the DB's step-by-step strategy for running your query — which scans, which joins, in what order.
+> `EXPLAIN` shows you the **plan**. `EXPLAIN ANALYZE` actually **runs it** and shows real timing. This is how you find *why* a query is slow. 🔍
 
 ---
 
-## 🤔 Why use a message broker at all?
+## 🤔 Why this matters
 
-Instead of Service A calling Service B directly (tight coupling, both must be up), you send a message through a broker:
+You wrote a query. It's slow. **Guessing why is a waste of time.** The query planner already decided exactly how it will fetch your data — `EXPLAIN` just shows you that decision so you can fix the real bottleneck instead of guessing.
 
-- ✅ **Decoupling** — producer and consumer don't need to know about each other
-- ✅ **Async processing** — don't block the request/response cycle (e.g. send email, generate report)
-- ✅ **Load leveling** — absorb traffic spikes, consumers work at their own pace
-- ✅ **Reliability** — retry failed jobs, don't lose data if a service is down
-- ✅ **Scalability** — add more consumers to process faster
-
-> [!example] Django context
-> Instead of `send_email()` blocking your API response, you publish an `"email.send"` event/task and a worker (Celery, or a custom consumer) handles it in the background.
+```sql
+EXPLAIN ANALYZE
+SELECT * FROM orders WHERE customer_id = 5;
+```
 
 ---
 
-## 🐰 RabbitMQ — the smart broker
+## 🧬 EXPLAIN vs EXPLAIN ANALYZE
 
-**What it is:** A traditional **message broker** implementing AMQP. It pushes messages to consumers and tracks delivery.
+| Command | What it does |
+|---|---|
+| `EXPLAIN` | Shows the **planned** strategy — estimated costs, no actual execution |
+| `EXPLAIN ANALYZE` | **Actually runs** the query and shows real timing + row counts alongside the plan |
+| `EXPLAIN ANALYZE, BUFFERS` (Postgres) | Adds cache hit/miss info — how much came from memory vs disk |
 
-### Core concepts you MUST know
-- 📤 **Producer** — sends messages
-- 📥 **Consumer** — receives messages
-- 📦 **Queue** — buffer that holds messages until consumed
-- 🔀 **Exchange** — receives messages from producers and **routes** them to queues based on rules
-  - `direct` — exact routing key match
-  - `topic` — pattern matching (`order.*`)
-  - `fanout` — broadcast to all bound queues
-  - `headers` — route by message headers
-- 🔗 **Binding** — the rule connecting an exchange to a queue
-- 🔑 **Routing key** — label used to decide where a message goes
-- ✅ **ACK / NACK** — consumer confirms message was processed (or not) → enables retry
-- 💀 **DLX (Dead Letter Exchange)** — where failed/rejected messages go
-
-### When to use RabbitMQ
-- Background job processing (emails, PDF generation, notifications)
-- Complex routing logic needed (send to different queues based on type/priority)
-- Task queues with **Celery** (very common in Django!)
-- Need low-latency, per-message guaranteed delivery
-- RPC-style request/reply patterns
+> [!warning]
+> `EXPLAIN ANALYZE` **actually executes** the query — be careful running it on `DELETE`/`UPDATE` in production (wrap in a transaction and `ROLLBACK` if testing writes).
 
 ---
 
-## 🔥 Kafka — the distributed log
+## 🔑 Key plan nodes you MUST recognize
 
-**What it is:** Not really a "queue" — it's a **distributed, append-only log**. Consumers *read* from it, messages aren't removed after consumption.
-
-### Core concepts you MUST know
-- 📝 **Topic** — named stream of events (like a table/category)
-- 🧩 **Partition** — a topic is split into partitions for parallelism & scale
-- 🔢 **Offset** — each message's position in a partition (consumers track their own offset)
-- 👥 **Consumer Group** — multiple consumers share the work of a topic (each partition read by only 1 consumer in the group)
-- 🖥️ **Broker** — a Kafka server; a cluster has many brokers
-- 🔁 **Replication factor** — how many copies of each partition exist (fault tolerance)
-- 🗝️ **Producer key** — determines which partition a message lands in (keeps order per key, e.g. per `user_id`)
-- ⏳ **Retention** — messages stay for a configured time (hours/days/forever), **not deleted on read** → replay is possible!
-- 🧠 **Zookeeper / KRaft** — cluster coordination (modern Kafka uses KRaft, no more Zookeeper)
-
-### When to use Kafka
-- High-throughput event streaming (millions of events/sec)
-- Event sourcing / audit logs — need to **replay** history
-- Multiple independent consumers reading the same stream
-- Log aggregation, analytics pipelines, metrics
-- Microservices architecture with many services reacting to the same events
-- Need strict ordering **within a key** (e.g., all events for one user in order)
-
----
-
-## ⚖️ Side-by-side comparison
-
-| Aspect | 🐰 RabbitMQ | 🔥 Kafka |
+| Node | Meaning | Good or bad? |
 |---|---|---|
-| **Model** | Smart broker, push-based | Distributed log, pull-based |
-| **Message lifecycle** | Deleted after ACK | Retained per policy, replayable |
-| **Throughput** | Good (thousands/sec) | Excellent (millions/sec) |
-| **Latency** | Very low, per-message | Low, but batched for throughput |
-| **Ordering** | Per-queue | Per-partition (per key) |
-| **Routing** | Rich (exchanges/routing keys) | Simple (topic + partition key) |
-| **Replay messages** | ❌ No (once consumed, gone) | ✅ Yes (reset offset) |
-| **Multiple consumers, same data** | Needs fanout exchange + separate queues | Native via consumer groups |
-| **Best for** | Task queues, RPC, job processing | Event streaming, event sourcing, analytics |
-| **Django ecosystem** | `Celery` + `pika`/`kombu` | `confluent-kafka-python`, `aiokafka` |
-| **Ops complexity** | Simpler to run | Heavier (cluster, partitions, retention tuning) |
+| 🐌 **Seq Scan** (Sequential Scan) | Reads every row in the table | ⚠️ Bad on large tables — usually means missing index |
+| 🎯 **Index Scan** | Uses an index, then fetches matching rows from the table | ✅ Good |
+| 🏆 **Index Only Scan** | Uses an index and **never touches the table** (all needed data is in the index) | ✅✅ Best — fastest possible |
+| 🔁 **Nested Loop** | For each row in A, scan B looking for a match | OK for small datasets, ⚠️ bad for large ones |
+| #️⃣ **Hash Join** | Builds a hash table from one side, probes it with the other | ✅ Good for large unsorted joins |
+| 📶 **Merge Join** | Both sides sorted, then merged like a zipper | ✅ Good when data is already sorted/indexed |
+| ↕️ **Sort** | Explicit sorting step (for `ORDER BY`, or before a Merge Join) | ⚠️ Watch for `Sort Method: external merge` (disk spill = slow) |
+| 🎛️ **Aggregate** | Computing `COUNT`, `SUM`, `AVG`, etc. | Normal for aggregate queries |
+| 🚧 **Filter** | Extra `WHERE` condition applied *after* a scan/join (not index-assisted) | ⚠️ If filtering out most rows, an index on that column could help |
+
+---
+
+## 📊 Reading a real plan
+
+```
+EXPLAIN ANALYZE SELECT * FROM orders WHERE customer_id = 5;
+
+Index Scan using idx_orders_customer_id on orders
+  (cost=0.29..8.31 rows=3 width=64)
+  (actual time=0.021..0.024 rows=3 loops=1)
+  Index Cond: (customer_id = 5)
+Planning Time: 0.084 ms
+Execution Time: 0.041 ms
+```
+
+| Field | Meaning |
+|---|---|
+| `cost=0.29..8.31` | Estimated cost: startup..total (arbitrary units, not ms) |
+| `rows=3` | **Estimated** rows the planner expects |
+| `actual time=0.021..0.024` | **Real** time: first row..all rows (in ms) |
+| `rows=3 loops=1` | **Actual** rows returned, and how many times this node ran |
+| `Planning Time` | Time spent building the plan itself |
+| `Execution Time` | Total actual execution time |
+
+> [!tip] The #1 thing to check
+> Compare **estimated rows** vs **actual rows**. A huge mismatch means the planner's statistics are stale (`ANALYZE tablename;` to refresh) or the query is written in a way the planner can't estimate well.
+
+---
+
+## 🚩 Red flags to look for
+
+- 🐌 `Seq Scan` on a large table with a `WHERE` clause → missing index
+- 🔁 `Nested Loop` with high `loops=` count on a big table → consider an index or restructuring the join
+- 💽 `Sort Method: external merge Disk` → sort didn't fit in memory, spilled to disk → increase `work_mem` or reduce result set
+- 📉 Estimated rows wildly different from actual rows → stale statistics, run `ANALYZE`
+- 🔂 The same table scanned multiple times → maybe a subquery/CTE could be restructured
+- ❌ Index exists but planner still does `Seq Scan` → could be low selectivity (planner decided a scan is actually cheaper!) — not always a bug
+
+---
+
+## 🐍 Django — how you actually use this
+
+### Using `.explain()` directly on a QuerySet
+```python
+qs = Order.objects.filter(customer_id=5)
+print(qs.explain())                     # basic plan
+print(qs.explain(analyze=True))         # real execution + timing (Postgres/MySQL)
+print(qs.explain(verbose=True, analyze=True))
+```
+
+### See the raw SQL Django generates (before even running EXPLAIN)
+```python
+print(qs.query)   # useful to sanity check JOINs/WHERE clauses match what you expect
+```
+
+### Common real-world Django scenario
+```python
+# Suspiciously slow endpoint? Check the plan:
+Order.objects.filter(status='pending').select_related('customer').explain(analyze=True)
+```
+Look for `Seq Scan` on `status` → maybe add:
+```python
+class Meta:
+    indexes = [models.Index(fields=['status'])]
+```
+Then re-run `.explain(analyze=True)` and confirm it switched to `Index Scan`. 🎯
+
+### Tools to make this easier
+- **django-debug-toolbar** — shows every query + a "Explain" button per query, right in the browser
+- **django-silk** — profiling + query plan viewer, good for finding N+1s too
+
+---
+
+## 🔐 Security-relevant notes
+
+- Execution plans can **leak schema/data-shape info** — never expose raw `EXPLAIN` output to end users or in public-facing error messages/API responses.
+- A query that's cheap on a small table can become a **DoS vector** at scale (e.g., an unindexed search filter an attacker can spam) — check plans on filters exposed to user input, especially search/autocomplete endpoints.
+- Watch for **unbounded queries** — `Seq Scan` combined with no `LIMIT` on user-controllable filters can be used to exhaust DB resources (a form of resource-exhaustion/DoS).
+- Slow queries in **auth/permission-check code paths** are a subtle risk too — timing differences can sometimes leak information (see timing-attack note in [[Database-Indexing]]).
 
 ---
 
 ## 🧭 Decision cheat sheet
 
 ```
-Do you need to REPLAY old messages / keep full history?
-├── YES → Kafka
-└── NO
-    │
-    Do you need complex routing (priority queues, RPC, fanout)?
-    ├── YES → RabbitMQ
-    └── NO
-        │
-        Do you need millions of events/sec across many consumers?
-        ├── YES → Kafka
-        └── NO → RabbitMQ (simpler, good enough)
+Is a specific query slow?
+├── Run EXPLAIN ANALYZE first — don't guess
+│
+Seq Scan on a WHERE/JOIN column, large table?
+├── YES → add an index, re-check plan
+│
+Estimated rows way off from actual rows?
+├── YES → run ANALYZE tablename to refresh planner statistics
+│
+Sort spilling to disk (external merge)?
+├── YES → reduce result set, add index to avoid sort, or tune work_mem
+│
+Plan looks fine but still slow?
+├── Check Execution Time vs Planning Time — maybe it's app-side (N+1, serialization), not the DB
 ```
-
----
-
-## 🔐 Security-relevant notes (since you work in security)
-
-- Both support **TLS** for transport encryption — always enable in production.
-- **RabbitMQ**: uses SASL/AMQP auth, supports per-vhost user permissions, plugin for OAuth2.
-- **Kafka**: supports **SASL/SCRAM**, **mTLS**, and **ACLs** per topic — lock down who can produce/consume which topics.
-- Watch for **unauthenticated management UIs** (RabbitMQ's 15672 port is a common misconfig target).
-- Kafka's retention means **sensitive data can persist longer than expected** — think about PII in event payloads and retention policy.
 
 ---
 
@@ -129,14 +152,15 @@ Do you need to REPLAY old messages / keep full history?
 
 | Term | Meaning |
 |---|---|
-| Producer | Sends messages |
-| Consumer | Receives/processes messages |
-| Broker | The server(s) running the messaging system |
-| Ack | Confirmation a message was handled |
-| Idempotency | Processing the same message twice has no bad side-effect (design for this!) |
-| Backpressure | What happens when consumers can't keep up with producers |
+| Execution plan | The DB's chosen strategy for running a query |
+| `EXPLAIN` | Shows the plan without running it |
+| `EXPLAIN ANALYZE` | Runs the query and shows real timing |
+| Seq Scan | Full table read, no index used |
+| Index Scan | Uses an index to find rows |
+| Cost | Planner's internal estimate (not real time) |
+| Query planner/optimizer | The DB component that decides the execution strategy |
+| Statistics | Planner's knowledge of data distribution, refreshed via `ANALYZE` |
 
 > [!tip] Rule of thumb
-> **"Do I need a to-do list?" → RabbitMQ.**
-> **"Do I need a history book?" → Kafka.**
+> **Never optimize blind.** Run `EXPLAIN ANALYZE` before and after any indexing/query change to confirm it actually helped — plans can surprise you.
 > 
