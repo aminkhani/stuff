@@ -1,4 +1,4 @@
-# 🧩 Normalization vs Denormalization — Quick Reference
+# 🧩 Quick Reference
 
 > [!tldr] TL;DR
 > **Normalization** = split data into related tables to **eliminate duplication** and keep it consistent. ✂️

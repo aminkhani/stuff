@@ -1,4 +1,4 @@
-# 💳 Database Transactions — Quick Reference
+# 💳 Quick Reference
 
 > [!tldr] TL;DR
 > A **transaction** groups multiple database operations into ONE all-or-nothing unit.

@@ -1,4 +1,4 @@
-# 🔑 Database Indexing — Quick Reference
+# 🔑 Quick Reference
 
 > [!tldr] TL;DR
 > An index is a **shortcut data structure** that lets the DB find rows **without scanning the whole table**.

@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "bd8af0cc1375fe4c",
+        "id": "a7c85eff64e12008",
         "type": "tabs",
         "children": [
           {
-            "id": "487a22c6fa303f3f",
+            "id": "3b6214bb30dad31e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Stuff/Database/MaterializedView.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "MaterializedView"
-            }
-          },
-          {
-            "id": "660b3f7892956efc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SQL Joins.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SQL Joins"
-            }
-          },
-          {
-            "id": "37d0e58f55289fa4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SQL Joins.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SQL Joins"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -215,34 +182,37 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "37d0e58f55289fa4",
+  "active": "3b6214bb30dad31e",
   "lastOpenFiles": [
-    "Query Execution Plans.md",
-    "SQL Joins.md",
-    "Stuff/Database/MaterializedView.md",
+    "Stuff/Database/README.md",
+    "Stuff/SoftwareDesign/README1.md",
+    "Stuff/SoftwareDesign/KafkaVsRabbitMQ.md",
+    "Untitled 2",
+    "Untitled 1",
+    "Untitled",
+    "Stuff/SoftwareDesign/DesignWalkthrough.md",
+    "Stuff/Database/SQL Joins.md",
+    "Stuff/Database/Query Execution Plans.md",
+    "Stuff/Database/Partitioning.md",
     "Stuff/Database/Normalization vs Denormalization.md",
+    "Stuff/Database/MaterializedView.md",
+    "Stuff/Database/ManagingEver‑GrowingTables.md",
+    "Stuff/Database/FillFactor.md",
+    "Stuff/Database/Database Transactions.md",
     "Stuff/Database/Database Indexing.md",
     "Stuff/Database/CAP Theorem.md",
-    "Stuff/SoftwareDesign/KafkaVsRabbitMQ.md",
-    "Stuff/Database/Database Transactions.md",
     "README.md",
     "Stuff/SoftwareDesign/Scrum/UserStory.md",
     "Stuff/SoftwareDesign/WebServer/WebServer.md",
     "Stuff/SoftwareDesign/WebServer/Nginx.md",
     "Stuff/SoftwareDesign/WebServer/ForwardAndReverseProxy.md",
     "Stuff/SoftwareDesign/APIGateway.md",
-    "Stuff/SoftwareDesign/DesignWalkthrough.md",
     "Stuff/SoftwareDesign/LoadBalancer.md",
     "Stuff/SoftwareDesign/SDLC.md",
     "Stuff/SoftwareDesign/SOLID.md",
     "Stuff/Security/TransportSecurity.md",
     "Stuff/Security/ThreatModeling.md",
     "Stuff/Security/ISO27001.md",
-    "Stuff/Security/Cybersecutity Framework.md",
-    "Stuff/Security/CIA.md",
-    "Stuff/Security/API Security.md",
-    "Stuff/Security/AccessControl.md",
-    "Stuff/Python/UV.md",
     "/Stuff/Security",
     "/Stuff/DevOps/Vault",
     "/Stuff/DevOps",
@@ -250,9 +220,6 @@
     "/Stuff/SoftwareDesign/WebServer",
     "/Stuff/SoftwareDesign",
     "Stuff/DevOps/Vault",
-    "Stuff/DevOps/OPA",
-    "Stuff/DevOps/Git",
-    "Stuff/DevOps/Docker",
     "Stuff/DevOps/Kubernetes/Networking&Services/AdvancedNetworking/Ingress/image.png",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kubernetes-cluster-architecture.svg",
     "Stuff/DevOps/Kubernetes/CoreConcepts/Architecture/kube.png",

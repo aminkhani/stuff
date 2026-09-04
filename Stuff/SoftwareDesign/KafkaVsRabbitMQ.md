@@ -1,4 +1,4 @@
-# 📨 Kafka vs RabbitMQ — Quick Reference
+# 📨 Quick Reference
 
 > [!tldr] TL;DR
 > - **RabbitMQ** = smart broker, simple routing, great for **task queues / job processing** 🐰

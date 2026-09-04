@@ -1,4 +1,4 @@
-# 🔗 SQL Joins — Quick Reference
+# 🔗 Quick Reference
 
 > [!tldr] TL;DR
 > A **JOIN** combines rows from two (or more) tables based on a related column.

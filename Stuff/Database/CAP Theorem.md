@@ -1,4 +1,4 @@
-# 🎯 CAP Theorem — Quick Reference
+# 🎯 Quick Reference
 
 > [!tldr] TL;DR
 > In a **distributed system**, when a **network partition** happens, you can only pick **one**:
