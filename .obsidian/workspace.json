@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/Security/API Security.md",
-                "mode": "source",
+                "file": "README.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "API Security"
+              "title": "README"
             }
           }
         ]
@@ -224,8 +224,17 @@
   },
   "active": "9aa474112282564c",
   "lastOpenFiles": [
-    "README.md",
+    "Stuff/SoftwareDesign/README1.md",
+    "Stuff/SoftwareDesign/KafkaVsRabbitMQ.md",
+    "Stuff/Database/SQL Joins.md",
+    "Stuff/Database/README.md",
+    "Stuff/Database/Query Execution Plans.md",
+    "Stuff/Database/Normalization vs Denormalization.md",
+    "Stuff/Database/Database Transactions.md",
+    "Stuff/Database/Database Indexing.md",
+    "Stuff/Database/CAP Theorem.md",
     "Stuff/Security/API Security.md",
+    "README.md",
     "Stuff/DevOps/Vault/README.md",
     "Stuff/DevOps/CI-CD/GitLabCI.md",
     "Stuff/DevOps/CI-CD/README.md.tmp.15076.59d1082698b9",
@@ -247,18 +256,9 @@
     "Stuff/Python/gRPC.md",
     "Stuff/Python/Futures.md",
     "Stuff/Python/gRPCTips.md",
-    "Stuff/Database/FillFactor.md",
-    "Stuff/Database/ManagingEver‑GrowingTables.md",
-    "Stuff/Python/FlakyTest.md",
-    "Stuff/SoftwareDesign/Scrum/UserStory.md",
-    "Stuff/SoftwareDesign/SDLC.md",
     "Stuff/SoftwareDesign/Scrum",
     "Stuff/SoftwareDesign/attachments/Pasted image 20250422103803.png",
     "Stuff/SoftwareDesign/attachments",
-    "Stuff/Linux/Service.md",
-    "Stuff/Linux/Socket.md",
-    "Stuff/Django/DRF/Djoser.md",
-    "Tasks.md",
     "Stuff/Django/DRF",
     "Stuff/Networking",
     "Stuff/Security/attachments/Pasted image 20250421124726.png",
