@@ -11,6 +11,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ## 🧩 What is OPA (Open Policy Agent)?
 
 **OPA** is a general-purpose **policy engine**: you hand it a JSON `input`, it evaluates rules written in **Rego** against that input plus a base `data` document, and it returns a JSON decision. That's the whole contract — **policy as code**, served as **decision as a service**. Think of a **judge 👩‍⚖️**: you bring the case file (the facts, as JSON), the judge consults the written law (policy + data) and returns a verdict. The judge never gathers evidence and never carries out the sentence — that part is still your code.
+
 ---
 ## 💡 Why do we need it?
 
@@ -159,6 +160,7 @@ class OPAPermission(BasePermission):
 ```
 
 The honest take: for **one** Django app this is a worse `has_object_permission` — you have added a network hop, a second language and a new failure mode to express a rule the ORM could check directly. OPA earns its place when the *same* rules must hold in more than one place: a Go worker and Django enforcing identical ownership rules, the [API Gateway](../../SoftwareDesign/APIGateway.md) rejecting requests before they reach any service, and Gatekeeper applying the same policy repo in-cluster. Then Rego is the single source of truth and DRF just calls it — with a cache and a hard timeout, because every view now depends on it.
+
 ---
 ## 🧠 Summary
 

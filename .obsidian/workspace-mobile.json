@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stuff/DevOps/OPA/README.md",
-                "mode": "preview",
+                "file": "Stuff/DevOps/CI-CD/README.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -188,6 +188,8 @@
   },
   "active": "1c564114adf329a2",
   "lastOpenFiles": [
+    "Stuff/SoftwareDesign/APIGateway.md",
+    "Stuff/DevOps/OPA/README.md",
     "Stuff/Database/ManagingEver‑GrowingTables.md",
     "/Stuff/Security/API Security.md",
     "Stuff/Security/API Security.md",
@@ -204,7 +206,6 @@
     "Stuff/Security/ThreatModeling.md",
     "Stuff/Security/ISO27001.md",
     "Stuff/DevOps/Vault/README.md",
-    "Stuff/DevOps/OPA/README.md",
     "Stuff/DevOps/Git/README.md",
     "Stuff/DevOps/Docker/README.md",
     "Stuff/DevOps/CI-CD/README.md",
@@ -214,7 +215,6 @@
     "/Stuff/SoftwareDesign/WebServer",
     "/Stuff/SoftwareDesign/LoadBalancer.md",
     "/Stuff/SoftwareDesign/APIGateway.md",
-    "Stuff/SoftwareDesign/APIGateway.md",
     "/Stuff/SoftwareDesign",
     "/Stuff/Security/TransportSecurity.md",
     "/Stuff/Security/ThreatModeling.md",

@@ -173,12 +173,12 @@ curl -i http://localhost:8000/v1/orders -H 'apikey: ...' # 200, and 61st call in
 ---
 ## 🧠 Summary
 
-| Concept | Takeaway |
-|---|---|
-| What it is | A policy-aware **north-south** entry point: authn, quotas, validation, transformation, routing |
-| Gateway vs mesh | North-south policy vs east-west reliability — different problems, different products |
-| BFF | Client-specific shaping is an app you deploy, not a plugin in the gateway |
-| PEP vs PDP | The gateway enforces coarse decisions; the service still authorizes its own objects |
-| Never | Business logic in the gateway, a public admin API, or blind trust in injected identity headers |
+| Concept         | Takeaway                                                                                       |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| What it is      | A policy-aware **north-south** entry point: authn, quotas, validation, transformation, routing |
+| Gateway vs mesh | North-south policy vs east-west reliability — different problems, different products           |
+| BFF             | Client-specific shaping is an app you deploy, not a plugin in the gateway                      |
+| PEP vs PDP      | The gateway enforces coarse decisions; the service still authorizes its own objects            |
+| Never           | Business logic in the gateway, a public admin API, or blind trust in injected identity headers |
 
 ---
