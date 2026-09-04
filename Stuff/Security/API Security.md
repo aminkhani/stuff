@@ -4,3 +4,7 @@
 - Per User/IP
 - Overall to mitigate DDoS
 ### Cross-Origin Resource Sharing (CORS)
+### SQL & NoSQL Injection
+### Firewalls
+### VPNs
+### 
