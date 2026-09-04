@@ -1,5 +1,4 @@
-
-# 🗺️ Query Execution Plans — Quick Reference
+# 🗺️ Quick Reference
 
 > [!tldr] TL;DR
 > An **execution plan** is the DB's step-by-step strategy for running your query — which scans, which joins, in what order.
