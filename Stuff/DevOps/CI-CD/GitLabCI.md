@@ -11,6 +11,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ## 🧩 What is GitLab CI?
 
 **GitLab CI/CD** is the pipeline engine built into GitLab itself: one file at the repo root — **`.gitlab-ci.yml`** — plus **runners** that poll the server for jobs and report back. Nothing else to install, and the container registry, environments, merge-request gates, review apps and security dashboards are *the same product*. That integration, not the YAML, is the actual advantage over bolting a separate CI tool onto a forge. Think of a **conveyor belt built into the factory 🏭** rather than a machine wheeled in beside it — the QA station and the loading bay already know about each other. See [CI/CD](./README.md) for the concepts this note assumes.
+
 ---
 ## ⚙️ Anatomy of `.gitlab-ci.yml`
 
@@ -30,6 +31,7 @@ Everything is a **job** — a top-level key with a `script`. Jobs are grouped in
 | `trigger:` | starts a **child pipeline** (`include:`) or a **multi-project** pipeline (`project:`) | child pipelines keep a monorepo's config readable and its graph small; multi-project chains a downstream repo |
 
 **Why `rules:` replaced `only`/`except`:** the old pair could not express AND/OR logic, could not see *why* the pipeline started (`CI_PIPELINE_SOURCE`), and reliably produced duplicate branch+MR pipelines. `only/except` still works but receives no new features — never mix both in one job. Also worth wiring in: `tags:` so a job only runs on chosen runners, `parallel: 5` with `CI_NODE_INDEX`/`CI_NODE_TOTAL` to split a slow suite, `parallel: matrix:` for version fan-out, `interruptible: true` so a new push cancels superseded runs, and **review apps** — a dynamic `environment: { name: review/$CI_COMMIT_REF_SLUG, on_stop: stop_review }` that deploys one throwaway instance per merge request.
+
 ---
 ## 🏃 Runner executors & the docker-in-docker problem
 
@@ -121,6 +123,7 @@ deploy:
 | Ecosystem | templates and CI components; verbose config, but fewer moving parts to audit | thousands of actions and more expression syntax — enormous leverage, enormous supply-chain surface |
 
 Verdict: **use whichever forge hosts your code**. Choose GitLab CI deliberately when you need on-prem CI *plus* registry and reviews in one auditable system; choose Actions when the marketplace and matrix testing are worth the pinning discipline ([GitHub Actions](./GitHubActions.md)).
+
 ---
 ## 🚨 When NOT to use it / limits
 - ❌ **Your code lives on GitHub.** Mirroring a repo into GitLab just for CI means two sources of truth, two permission models and confusing MR statuses. Use the forge's own runner.

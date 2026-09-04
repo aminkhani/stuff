@@ -13,6 +13,7 @@ debugInConsole: false # Print debug info in Obsidian console
 **Docker** is the tooling to build, ship and run **containers**. A container is **not a small VM** — it is an ordinary **process on the host kernel with a restricted view of the world**. Nothing is virtualised: same kernel, same scheduler, same page cache.
 
 Think of a **hotel room 🏨** instead of a separate house: shared foundation, plumbing and roof (the kernel), but your own door, your own window, and a metered electricity budget (**namespaces** + **cgroups**).
+
 ---
 ## 💡 Why do we need it?
 - 📦 **"Works on my machine" becomes true** — the image ships OS libs, interpreter and your wheels as one **immutable, content-addressed** artifact: the exact same digest runs in dev, CI and prod.
@@ -75,6 +76,7 @@ Rule of thumb: **anything you would miss after `docker rm` belongs in a named vo
 > **Publishing a port bypasses UFW.** `-p 5432:5432` installs a `DNAT` rule in Docker's own `iptables` chains, traversed in `nat`/`PREROUTING` — **before** the `INPUT` rules UFW writes. The container is therefore reachable from the whole network while `ufw status` still says `deny (incoming)`. Publish to loopback (`-p 127.0.0.1:5432:5432`) and expose only what the reverse proxy needs: [Nginx](../../SoftwareDesign/WebServer/Nginx.md).
 
 **Compose** describes the whole stack in one YAML on one user-defined network (`docker compose up --build`). It is a dev / single-host tool; for multi-node scheduling go to [Kubernetes](../Kubernetes/README.md), whose node-level runtime is [containerd](../Kubernetes/ClusterInstallation/Containerd/containerd.md).
+
 ---
 ## 🧪 Example
 ### (a) Multi-stage Dockerfile — Django + gunicorn, non-root
@@ -140,6 +142,7 @@ docker system prune -af --volumes            # DANGER: --volumes deletes unused 
 | **LXC / LXD** | *system* containers: full init, many services, feels like a VM | yes | you want a long-lived lightweight machine, not one process |
 | **VM (KVM / Hyper-V)** | own kernel, hardware-enforced boundary | n/a | untrusted multi-tenant code, a different kernel/OS, strict compliance |
 | **buildah / kaniko / BuildKit** | builds images with **no** Docker daemon | yes | building inside CI or K8s, where mounting the socket is unacceptable ([CI/CD](../CI-CD/README.md)) |
+
 ---
 ## 🚨 When NOT to use it
 - ❌ **A stateful production database "just in a container"** with no deliberate storage design — volume driver, fsync semantics, tested restore, major-version upgrade path. Containers are fine; a casual bind mount on laptop-grade storage is not.

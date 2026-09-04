@@ -17,6 +17,7 @@ Three different ideas sharing one acronym — and interviewers ask precisely bec
 - **Continuous Deployment** — the same, minus the human: green pipeline → **it deploys itself**.
 
 An **airport baggage system 🧳**: CI is every bag going through the same scanner the moment it is checked in; Continuous Delivery is bags queued at the aircraft door, cleared to load; Continuous Deployment is the belt loading them with nobody watching. The distinction is not pedantry — "we do CI/CD" while merging month-old branches is just a build server.
+
 ---
 ## 💡 Why do we need it?
 - 🔀 **Small batches beat big ones twice** — merge pain grows with branch age (daily integration keeps conflicts trivial, monthly integration is a project), and a 3-commit deploy is diagnosable where a quarterly 400-commit release is a bisect problem with an audience.
@@ -36,6 +37,7 @@ trigger          push / merge request / tag / cron / manual / API
 ```
 
 **Fail-fast ordering is the whole design** — the cheapest checks that catch the most run first, because every minute of pipeline is multiplied by every push: format/lint/typecheck (seconds; style, undefined names, wrong types) → **unit tests** (1–3 min; logic regressions) → **build the image** (packaging, missing system libs) → **integration/e2e** against a real DB and broker (5–20 min; wiring, migrations, contracts) → **security scans** (SAST, dependencies, container, IaC) → **deploy + smoke test**. A 40-minute suite that ends in a linter error wasted 40 minutes; ordered correctly it fails in 20 seconds.
+
 ---
 ## 🏃 Runners / agents
 
@@ -45,6 +47,7 @@ The machine that executes a job — and both of its axes matter:
 - **Ephemeral vs long-lived.** Ephemeral = a fresh container/VM per job, destroyed afterwards, and the correct default. Long-lived = "a box with a shell runner": fast, and a slow disaster.
 
 **Why ephemeral matters twice over.** *Hygiene:* a long-lived runner accumulates a global `pip` cache, a stale `node_modules`, a leftover `.env`, a half-migrated database — so the build passes for reasons that are not in the repo, and fails on a clean machine. *Security:* whatever job B leaves on disk, job A can read — tokens, private source, SSH keys. One compromised build on a shared runner reads every other project's secrets, and can persist a backdoor in the runner itself.
+
 ---
 ## 💾 Cache vs artifacts — different jobs, do not mix them
 
@@ -56,6 +59,7 @@ The machine that executes a job — and both of its axes matter:
 | If it vanishes | the build is slower, still correct | the pipeline is broken |
 
 Never cache what you cannot regenerate, key the cache on the lockfile (`requirements.txt` / `uv.lock`) so a dependency bump invalidates it, and **never cache credentials, `.git/config` or `.netrc`** — a poisoned cache is a supply-chain attack with a friendly name.
+
 ---
 ## 🚦 Environments, approvals & promotion
 
@@ -75,6 +79,7 @@ An **environment** is a named deploy target (`dev`, `staging`, `production`) own
 | **Feature flags** (deploy dark, toggle on) | none | ⚡ instant, **no deploy at all** | flag service | 🟢 decouples schema change from behaviour change |
 
 Verdict: **rolling** is the sane default and what Kubernetes does natively ([Kubernetes](../Kubernetes/README.md)); **blue-green** when you need an instant, provable rollback and can afford double capacity; **canary** when you have the observability to notice the failure ([Monitoring & Logging](../Monitoring&Logging/README.md)); **feature flags** for anything risky, because they let you roll back *behaviour* without touching the artifact. All of the non-recreate options need a [load balancer](../../SoftwareDesign/LoadBalancer.md) doing health-checked draining, or "zero downtime" just means "dropped in-flight requests quietly".
+
 ---
 ## 🗃️ Database migrations in CD — the honest part
 
@@ -89,6 +94,7 @@ Code rolls back in seconds. **Schema does not.** During any zero-downtime deploy
 > **Never ship a destructive migration in the same release as the code that stops using the column.** The rolling deploy hasn't finished: old pods still `SELECT dropped_column` and return 500s, and your rollback path is now gone because the old code cannot run against the new schema. Renames are two releases (add + backfill + drop), never one `ALTER TABLE ... RENAME`.
 
 Operationally: run `migrate` as a **one-shot job before the new code rolls out** (safe, because the migration is backward-compatible by construction), set a short `lock_timeout` so a blocked `ALTER TABLE` fails the deploy instead of queueing every query behind an `ACCESS EXCLUSIVE` lock, and build indexes with `CREATE INDEX CONCURRENTLY`. See also [Partitioning](../../Database/Partitioning.md) for the large-table cases where an online change is the only option.
+
 ---
 ## 📈 DORA metrics — is the pipeline actually working?
 
@@ -100,6 +106,7 @@ Two speed measures and two stability measures — use them as diagnostics, not t
 | **Lead time for changes** | commit → running in production | under a day |
 | **Change failure rate** | % of deploys causing degraded service | ~5–15% |
 | **Failed-deployment recovery time** (formerly MTTR) | how fast do you recover? | under an hour |
+
 ---
 ## 🔁 GitOps — the pull-based alternative
 
@@ -112,6 +119,7 @@ Classic CD is **push**: the pipeline holds cluster credentials and runs `kubectl
 | Cost | trivial to set up | another controller, and secrets need Sealed/External Secrets or [Vault](../Vault/README.md) |
 
 The clean split: **CI builds, tests and pushes the image, then commits the new digest into the manifests repo; CD is the reconciler.** Keep manifests in a separate repo or path so an image bump does not retrigger the build.
+
 ---
 ## ⚖️ Tooling comparison
 
@@ -124,6 +132,7 @@ The clean split: **CI builds, tests and pushes the image, then commits the new d
 | **CircleCI / Buildkite** | CircleCI: SaaS + orbs · Buildkite: SaaS control plane, **your** agents | `.circleci/config.yml` / `pipeline.yml` | smaller, focused, fast | OIDC supported | Buildkite: you run only the agents | you want hosted UX but your source and compute stay on your hardware (Buildkite) |
 
 Rule of thumb: **use whatever your forge already provides** — the integration (statuses, MR gates, registry, environments) is most of the value. Reach for Jenkins when the constraint is physical, and add Argo/Flux *next to* your CI rather than instead of it.
+
 ---
 ## 🚨 When NOT to use it / limits
 - ❌ **Continuous *Deployment* with a thin test suite or no rollback path.** Auto-deploy amplifies whatever quality you already have. Without a tested rollback (previous digest still pullable, migrations reversible), it is an automated outage generator — stay on Continuous *Delivery* with a human gate until the safety net exists.
@@ -148,6 +157,7 @@ Your CI system is the **most privileged machine you own**: read access to every 
 | **Verify at deploy time** | signatures are worthless unless something *refuses* unsigned images — admission policy in the cluster ([OPA](../OPA/README.md)), pulling over TLS from a registry you control ([Transport Security](../../Security/TransportSecurity.md)) |
 | **Scans are gates, not reports** | SAST + `pip-audit` + `trivy image` + IaC scanning, failing the pipeline on *new* criticals with a documented exception path. A dashboard nobody blocks on changes nothing |
 | **Protect the pipeline definition itself** | `.gitlab-ci.yml` / `.github/workflows/**` / `Jenkinsfile` under **CODEOWNERS** with required review — whoever can edit the pipeline can print every secret. Audit who may approve production, forbid self-approval, and keep deploy logs immutable ([Monitoring & Logging](../Monitoring&Logging/README.md)) |
+
 ---
 ## 🐍 Django / Backend tie-in
 

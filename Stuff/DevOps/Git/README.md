@@ -13,6 +13,7 @@ debugInConsole: false # Print debug info in Obsidian console
 **Git** is a **content-addressed object database** with a thin porcelain of commands bolted on top. Every file version, directory listing and commit is stored **once**, keyed by the hash of its own content. Branches are not copies of anything — a branch is a 41-byte text file holding one commit hash.
 
 Think of a stack of numbered photographs 📸 of the whole project. Each photo (**commit**) says *"this is what everything looked like, and the photo before me was #abc123"*. A **branch** is a sticky note you move from photo to photo.
+
 ---
 ## 💡 Why do we need it?
 - 🕰️ **Reversible history** — any past state is one command away, and `reflog` recovers even the states you thought you destroyed.
@@ -46,6 +47,7 @@ Identical content means the identical blob, stored once, however many commits or
 | **HEAD** | a ref pointing at the current commit | `git commit`, `git switch`, `git reset` |
 
 `git status` is a three-way diff across all three. `git diff` = working tree vs index; `git diff --staged` = index vs HEAD.
+
 ---
 ## 🌿 merge vs rebase vs squash
 | Operation | History shape | New SHAs? | Safe on a pushed branch |
@@ -56,6 +58,7 @@ Identical content means the identical blob, stored once, however many commits or
 | **squash merge** | one new commit containing the whole branch diff | yes (collapsed) | ✅ for the target; the source branch is now orphaned — delete it |
 
 Verdict: **rebase your own local feature branch** onto `main` before opening the PR (linear history, bisect-friendly), then **merge or squash** to integrate. Rebasing or force-pushing a branch someone else has already pulled gives them duplicated commits and a manual mess — that is the one hard rule.
+
 ---
 ## 🔄 Undo: reset vs revert vs restore vs checkout
 | Command | HEAD | Index | Working tree | Loses work? | OK on pushed commits |
@@ -69,6 +72,7 @@ Verdict: **rebase your own local feature branch** onto `main` before opening the
 | `git switch <branch>` | moves to another ref | — | checked out | no (refuses when dirty) | ✅ |
 
 `git checkout` does the jobs of both `switch` and `restore`, which is why everyone was confused for a decade — prefer the newer pair (Git ≥ 2.23). **`git reflog` is the undo net:** every movement of `HEAD` is journaled for ~90 days (`gc.reflogExpire`), so even a bad `reset --hard` is recoverable. A commit is only truly gone once it is unreachable **and** `gc` has run.
+
 ---
 ## 🛠️ The rest of the toolbox
 - **`cherry-pick <sha>`** — replay one commit elsewhere (new SHA). Right for a hotfix; a *habit* of it means your branching model is wrong.
@@ -90,6 +94,7 @@ Verdict: **rebase your own local feature branch** onto `main` before opening the
 | **Git Flow** | `develop`, `feature/*`, `release/*`, `hotfix/*`, `main` | scheduled versioned releases | heavy — long-lived branches, painful merges | installable software with several supported versions in the field |
 
 Overhead and merge pain both grow straight down the table. Default to **GitHub Flow**; move to trunk-based once your tests are good enough to earn it.
+
 ---
 ## 🧪 Example
 Recovering a branch you just destroyed:

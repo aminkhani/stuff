@@ -144,6 +144,7 @@ vault write auth/approle/login role_id=6a1f... secret_id=9d2c...
 | **plain `.env`** | ❌ | ❌ | ❌ | 🟢 Zero | ✅ | Local development, and nothing else |
 
 The honest verdict: Vault is the most capable option here and by a wide margin the **most operationally heavy**. Dynamic credentials, Transit and internal PKI are things nothing else on this list does as well — but you pay for them with unseal procedures, HA quorum, version upgrades and rehearsed Raft snapshot restores. If dynamic creds and encryption-as-a-service are not on your roadmap, a managed secret manager or SOPS is the better engineering trade.
+
 ---
 ## 🔐 Security notes & production hardening
 
@@ -179,6 +180,7 @@ def rebind(creds):                         # renewal failed -> swap in fresh cre
 ```
 
 Dynamic DB credentials fight with persistent connections: with `CONN_MAX_AGE` set, a pooled connection can outlive the credential that opened it, and an external pooler (pgbouncer) will happily keep a dead user's session. Keep `CONN_MAX_AGE` **well below the lease TTL**, renew the lease from a background thread, and treat `OperationalError: password authentication failed` as "re-fetch and `close()`", not as a crash. For a sensitive model field, **Transit** means Django only ever stores ciphertext — `c.secrets.transit.encrypt_data(name="pii", plaintext=b64)` in `save()`, `decrypt_data` on read: the key stays in Vault, and rotating it never rewrites your rows (that's what `rewrap` is for).
+
 ---
 ## 🧠 Summary
 
