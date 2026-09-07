@@ -201,7 +201,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 326.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,7 +218,7 @@
       "vscode-editor:Create Code File": false
     }
   },
-  "active": "d93d6cb8a965371a",
+  "active": "f8ad892ea71c7694",
   "lastOpenFiles": [
     "Stuff/Security/Identity and Access.md",
     "Stuff/Security/ISO27001.md",
