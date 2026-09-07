@@ -162,14 +162,14 @@ RUN --mount=type=secret,id=pip_token \
 ```
 **Always** — runtime secrets come from a store, never the image ([Vault](../Vault/README.md)):
 
-| Control | Flag / setting |
-|---|---|
-| Least privilege | `--cap-drop=ALL --cap-add=NET_BIND_SERVICE`; `USER 10001` in the image **and** `--user 10001:10001` at runtime |
-| Block escalation, immutable rootfs | `--security-opt no-new-privileges:true --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m` |
-| Contain resource-exhaustion DoS | `--memory=512m --cpus=1.5 --pids-limit=200` |
-| Shrink host-root blast radius | rootless Docker, or `"userns-remap": "default"` in `/etc/docker/daemon.json` |
-| Bound log growth | `--log-opt max-size=10m --log-opt max-file=3` ([Monitoring & Logging](../Monitoring&Logging/README.md)) |
-| Supply chain | `trivy image shop/web:1.4.2`, `docker buildx build --sbom=true` ([SCA](../../Hardening/SCA.md)); pull over TLS from a registry you control and verify signatures with cosign ([Transport Security](../../Security/TransportSecurity.md)) |
+| Control                            | Flag / setting                                                                                                                                                                                                                           |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Least privilege                    | `--cap-drop=ALL --cap-add=NET_BIND_SERVICE`; `USER 10001` in the image **and** `--user 10001:10001` at runtime                                                                                                                           |
+| Block escalation, immutable rootfs | `--security-opt no-new-privileges:true --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m`                                                                                                                                               |
+| Contain resource-exhaustion DoS    | `--memory=512m --cpus=1.5 --pids-limit=200`                                                                                                                                                                                              |
+| Shrink host-root blast radius      | rootless Docker, or `"userns-remap": "default"` in `/etc/docker/daemon.json`                                                                                                                                                             |
+| Bound log growth                   | `--log-opt max-size=10m --log-opt max-file=3` ([Monitoring & Logging](../Monitoring&Logging/README.md))                                                                                                                                  |
+| Supply chain                       | `trivy image shop/web:1.4.2`, `docker buildx build --sbom=true` ([SCA](../../Hardening/SCA.md)); pull over TLS from a registry you control and verify signatures with cosign ([Transport Security](../../Security/TransportSecurity.md)) |
 
 **Base image tradeoffs:** `-slim` (Debian) is the right default for Python. **Distroless** drops the shell and package manager — great attack-surface reduction, painful debugging (use ephemeral debug containers). **Alpine** links **musl**, so `pip` finds no `manylinux` wheels and compiles from source (slow builds, needs a toolchain), and musl's resolver is famously strict about large DNS responses and search-domain handling. For Django, stay on `slim`. Inside Kubernetes the same controls live in `securityContext` — `runAsNonRoot: true`, `allowPrivilegeEscalation: false`, `readOnlyRootFilesystem: true`, `capabilities.drop: [ALL]` — and should be **enforced** by an admission policy engine, not merely documented ([OPA](../OPA/README.md)).
 
@@ -177,6 +177,7 @@ RUN --mount=type=secret,id=pip_token \
 > **Windows:** Docker Desktop runs a Linux VM on the **WSL2** backend — keep the repo *inside* the WSL2 filesystem, because bind mounts crossing `/mnt/c` are dramatically slower. And when Git checks out `entrypoint.sh` with **CRLF**, the container dies with `exec /entrypoint.sh: no such file or directory` or `exec format error`, because the trailing `\r` becomes part of the interpreter path. Fix it in `.gitattributes` (`*.sh text eol=lf`) — see [Git](../Git/README.md).
 ---
 ## 🐍 Django / Backend tie-in
+
 - Run `collectstatic` at **build** time, not in the entrypoint — the image stays immutable and `--read-only` actually works. And **migrations are not a container-start step** when you run N replicas: they race. Run them as a one-shot job (`docker compose run --rm web python manage.py migrate`, or a K8s `Job`/init container) gated in the pipeline.
 - Behind a proxy set `SECURE_PROXY_SSL_HEADER` and gunicorn's `--forwarded-allow-ips`, or Django builds `http://` URLs and redirect-loops. Keep `DEBUG=False` and an explicit `ALLOWED_HOSTS`, both from env.
 - Point `HEALTHCHECK` at a cheap `/healthz/` view that does **not** touch the DB, and keep a separate deep readiness endpoint that does. Gunicorn workers ≈ `2 × CPU + 1`, but size it against `--cpus`: the container sees the *host's* CPU count, not its cgroup quota.
