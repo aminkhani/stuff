@@ -56,7 +56,7 @@ auth (approle | k8s | oidc) --> token{ policies, TTL } --> request a path
 | **token** | The token itself | Bootstrap, break-glass, CLI after `vault login` |
 | **AppRole** | `role_id` (ship it in config) + `secret_id` (the secret half) | **The standard for services** outside Kubernetes and cloud IAM |
 | **Kubernetes** / **AWS · Azure IAM** | Pod's service-account JWT verified via the API server, or signed instance/role metadata | Cluster and cloud workloads — there is no secret to distribute at all |
-| **JWT / OIDC** | A signed ID token from your IdP | Humans via SSO, plus CI runners using OIDC. Exactly the machinery in [OAuth](../../Django/OAuth.md): Vault is the relying party, validates the ID token, then maps a claim (`groups`, `sub`) onto policies |
+| **JWT / OIDC** | A signed ID token from your IdP | Humans via SSO, plus CI runners using OIDC. Exactly the machinery in [OAuth](../../Backend/Django/OAuth.md): Vault is the relying party, validates the ID token, then maps a claim (`groups`, `sub`) onto policies |
 | **userpass / LDAP** | Password or directory bind | Humans in small or on-prem setups |
 
 > [!TIP]

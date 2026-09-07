@@ -10,7 +10,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ---
 ## 🎯 Why a queue and not a thread
 
-A web worker is a slot. While it renders a PDF or calls Stripe it serves nobody else and holds the connection open — four Gunicorn workers plus four thirty-second exports is a site that is down. In-process concurrency ([Futures](../Python/Futures.md)) fixes throughput inside one request and nothing else.
+A web worker is a slot. While it renders a PDF or calls Stripe it serves nobody else and holds the connection open — four Gunicorn workers plus four thirty-second exports is a site that is down. In-process concurrency ([Futures](../../Python/Futures.md)) fixes throughput inside one request and nothing else.
 
 A background job also needs durability, retry and visibility, and a thread has none of them: replace the process during a deploy and the work is gone, with no record that it ever existed.
 
@@ -51,7 +51,7 @@ Django view ──.delay(pk)──►   BROKER    ──►   worker pool    ─
 | Pick when | short tasks, a lost job is survivable | you need guarantees, priority, routing | you are on AWS and want zero ops |
 
 > [!NOTE]
-> **Kafka is not a Celery broker**, structurally. Celery needs competing consumers, per-message acks and redelivery of one message; Kafka is a partitioned, replayable log where consumers own partitions and you cannot ack offset 7 while 5 is outstanding. See [Kafka vs RabbitMQ](../SoftwareDesign/KafkaVsRabbitMQ.md).
+> **Kafka is not a Celery broker**, structurally. Celery needs competing consumers, per-message acks and redelivery of one message; Kafka is a partitioned, replayable log where consumers own partitions and you cannot ack offset 7 while 5 is outstanding. See [Kafka vs RabbitMQ](../../SoftwareDesign/KafkaVsRabbitMQ.md).
 
 ---
 ## 🧩 Defining tasks
@@ -123,7 +123,7 @@ The broker is faster than your database. A worker picks the message up within mi
 Use `partial`, not a lambda — `on_commit(lambda: t.delay(o.pk))` in a loop captures the last `o`. `ATOMIC_REQUESTS = True` puts every view in this situation, and Django's `TestCase` never commits, so callbacks fire only under `captureOnCommitCallbacks()`.
 
 > [!IMPORTANT]
-> `on_commit` closes the race, not the durability gap: the commit can succeed and the process die before the callback publishes, leaving a row with no job and no error. When a missed job is a business problem, write the message *inside* the transaction — the transactional-outbox pattern. Isolation rules: [Database Transactions](../Database/Database%20Transactions.md).
+> `on_commit` closes the race, not the durability gap: the commit can succeed and the process die before the callback publishes, leaving a row with no job and no error. When a missed job is a business problem, write the message *inside* the transaction — the transactional-outbox pattern. Isolation rules: [Database Transactions](../../Database/Database%20Transactions.md).
 
 ---
 ## 🔁 Delivery semantics — at-least-once
@@ -290,7 +290,7 @@ CELERY_TIMEZONE = "Europe/Berlin"     # crontab() is interpreted in this zone
 | --- | --- | --- |
 | **Celery beat** | schedules that fan out over a fleet, with retries and routing | needs broker, workers and beat healthy; a single point of scheduling |
 | **cron** | one host, one command, zero infrastructure | no locking so runs overlap, no retries, a log file for visibility |
-| **systemd timer** | `OnCalendar=`, `Persistent=true` catch-up, journald, cgroup limits | per-host, and you build "did it succeed" yourself — [Service](../Linux/Service.md) |
+| **systemd timer** | `OnCalendar=`, `Persistent=true` catch-up, journald, cgroup limits | per-host, and you build "did it succeed" yourself — [Service](../../Linux/Service.md) |
 
 Workers are long-running daemons, so on a VM they belong under a supervisor rather than a `nohup`:
 
@@ -391,7 +391,7 @@ def test_view_queues_invoice(client, django_capture_on_commit_callbacks):
     delay.assert_called_once_with(Order.objects.get().pk)
 ```
 
-Tasks carry hidden state across a process boundary, which makes them a classic source of order-dependent failures — see [Flaky Tests](../Python/FlakyTest.md). `pytest-celery` starts a real broker and worker for a handful of integration tests; not for every task.
+Tasks carry hidden state across a process boundary, which makes them a classic source of order-dependent failures — see [Flaky Tests](../../Python/FlakyTest.md). `pytest-celery` starts a real broker and worker for a handful of integration tests; not for every task.
 
 ### 📈 Monitoring — what to alert on
 
@@ -419,7 +419,7 @@ Flower gives a dashboard and REST API over task events (`worker_send_task_events
 
 - **Never enable pickle.** A broker that accepts pickled messages is a remote-code-execution channel for anything able to publish. `task_serializer = "json"` is half of it; `accept_content = ["json"]` is the half that makes workers *refuse* pickle.
 - **Keep the broker internal.** Redis has no authentication by default: `requirepass` or ACLs, a private bind address, `rediss://` across untrusted networks. An exposed broker lets an attacker enqueue any registered task with any arguments — code execution without needing pickle at all.
-- **Broker credentials live in a URL**, so they surface in `ps`, container inspect output and tracebacks. Load them from a secret manager — see [Vault](../DevOps/Vault/README.md) — and make rotation possible without a rebuild.
+- **Broker credentials live in a URL**, so they surface in `ps`, container inspect output and tracebacks. Load them from a secret manager — see [Vault](../../DevOps/Vault/README.md) — and make rotation possible without a rebuild.
 - **Never take a task name from user input.** `app.send_task(request.data["task"])` is arbitrary code execution with extra steps.
 - **Arguments get logged** into the broker, the result backend, Flower and your log pipeline. Pass an id, not a token or a card number.
 - **Authorize before you enqueue.** A task has no `request.user`, so the decision travels as data — and gets re-checked at execution time, because the message may run after access was revoked.
@@ -432,13 +432,13 @@ A queue bought to save 20 ms is a net loss: the broker round-trip costs millisec
 | The work is | Where it belongs |
 | --- | --- |
 | under ~100 ms and needed for the response | inline, in the request |
-| slow because a query is slow | fixed, not moved — [ORM Optimization](./ORMOptimization.md). A 40-second query is still 40 seconds where nobody is watching |
+| slow because a query is slow | fixed, not moved — [ORM Optimization](ORMOptimization.md). A 40-second query is still 40 seconds where nobody is watching |
 | slow because the same value is recomputed on every read | cached or precomputed — [Caching](../SoftwareDesign/Caching.md) |
 | slow, external and retryable: mail, payments, PDFs, imports | a task |
 | scheduled, or required to survive a deploy | a task |
-| fan-out over I/O *inside* one request the user is waiting on | a thread pool — [Futures](../Python/Futures.md) |
+| fan-out over I/O *inside* one request the user is waiting on | a thread pool — [Futures](../../Python/Futures.md) |
 
-The shape that pays for the queue: validate, write a `pending` row, enqueue after commit, return `202 Accepted` with a URL to poll. The state stays inspectable in your own database, which puts weight on the view and serializer layer — see [DRF Internals](./DRF/DRFInternals.md).
+The shape that pays for the queue: validate, write a `pending` row, enqueue after commit, return `202 Accepted` with a URL to poll. The state stays inspectable in your own database, which puts weight on the view and serializer layer — see [DRF Internals](DRF/DRF%20Internals.md).
 
 ---
 ## 🚨 Common mistakes

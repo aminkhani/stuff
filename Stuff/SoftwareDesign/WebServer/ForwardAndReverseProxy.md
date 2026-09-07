@@ -172,7 +172,7 @@ pip install django    # allowlisted host -> works; anything else -> 403 from Squ
 
 - **`SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')`** makes `request.is_secure()` believe that header. Safe **only** if the proxy always overwrites it and nothing can reach Gunicorn directly — otherwise a client sends `X-Forwarded-Proto: https` over plain HTTP and your redirect, secure cookies and HSTS logic all silently disengage.
 - **`ALLOWED_HOSTS`** must list real hostnames, not `['*']`, because the proxy passes `Host` straight through. Set `USE_X_FORWARDED_HOST = True` only when the edge sets `X-Forwarded-Host` itself; otherwise leave it off and forward the real `Host`.
-- **Real client IP for throttling:** `REMOTE_ADDR` is the proxy, and DRF's `AnonRateThrottle` keys on it — so behind a proxy every anonymous user shares one bucket. Fix it with middleware that reads `X-Forwarded-For` **by trusted-proxy count**, never `split(',')[0]` ([Authentication](../../Django/Authentication.md)).
+- **Real client IP for throttling:** `REMOTE_ADDR` is the proxy, and DRF's `AnonRateThrottle` keys on it — so behind a proxy every anonymous user shares one bucket. Fix it with middleware that reads `X-Forwarded-For` **by trusted-proxy count**, never `split(',')[0]` ([Authentication](../../Backend/Django/Authentication.md)).
 
 > [!IMPORTANT]
 > Gunicorn has its own `forwarded_allow_ips` (default `127.0.0.1`). If Nginx runs on a different host or container, Gunicorn ignores its `X-Forwarded-*` headers entirely until you set it — the usual cause of "Django keeps redirecting to `http://`".

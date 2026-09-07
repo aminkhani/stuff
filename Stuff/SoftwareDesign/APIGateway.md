@@ -167,7 +167,7 @@ curl -i http://localhost:8000/v1/orders -H 'apikey: ...' # 200, and 61st call in
 ## 🐍 Django / Backend tie-in
 
 - **DRF throttling vs gateway rate limiting** — the gateway does the cheap coarse work (per-consumer and per-IP limits) *before* a Gunicorn worker is ever occupied, which is what actually protects capacity. DRF's `ScopedRateThrottle` handles the **business** quota that needs app data — "10 exports per day per organisation". Keep both; never try to express a business rule in Lua.
-- **Where to terminate auth** — the gateway proves the token is authentic, but Django still needs a `request.user`. Re-validating the JWT locally (Simple JWT's `JWTAuthentication`) is the safe default: cheap, self-contained, and still correct if somebody bypasses the gateway. Trust a signed identity header only over mTLS. Object-level checks (`has_object_permission`) never leave Django ([Authorization](../Django/Authorization.md), [OAuth](../Django/OAuth.md)).
+- **Where to terminate auth** — the gateway proves the token is authentic, but Django still needs a `request.user`. Re-validating the JWT locally (Simple JWT's `JWTAuthentication`) is the safe default: cheap, self-contained, and still correct if somebody bypasses the gateway. Trust a signed identity header only over mTLS. Object-level checks (`has_object_permission`) never leave Django ([Authorization](../Backend/Django/Authorization.md), [OAuth](../Backend/Django/OAuth.md)).
 - **`ALLOWED_HOSTS` and forwarded headers** — the gateway usually rewrites `Host`, so either add its hostname to `ALLOWED_HOSTS` or configure it to preserve the original. Every `X-Forwarded-*` rule from [ForwardAndReverseProxy](WebServer/ForwardAndReverseProxy.md) still applies, with one more trusted hop to count.
 
 ---

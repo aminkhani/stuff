@@ -47,10 +47,10 @@ Read it as a review checklist, not a taxonomy: five of the ten are authorization
 | **Session cookie** | first-party browser clients on the same site | needs CSRF protection; set `HttpOnly`, `Secure`, `SameSite=Lax` |
 | **API key** | server-to-server, low sensitivity | it identifies the *app*, not a user; store a hash, prefix it so it can be revoked and scanned for in leaks |
 | **Bearer JWT** | stateless APIs, short-lived access tokens | cannot be revoked before expiry — keep it minutes, not days; pin `alg`, verify `iss`/`aud`/`exp` |
-| **OAuth 2.0 / OIDC** | third-party access, delegated scopes | use authorization code + PKCE; never the implicit flow — see [OAuth](../Django/OAuth.md) |
+| **OAuth 2.0 / OIDC** | third-party access, delegated scopes | use authorization code + PKCE; never the implicit flow — see [OAuth](../Backend/Django/OAuth.md) |
 | **mTLS** | internal service-to-service | certificate lifecycle and rotation; see [Transport Security](./TransportSecurity.md) |
 
-The mechanics of doing this in Django are in [Authentication](../Django/Authentication.md); the rules that generalise:
+The mechanics of doing this in Django are in [Authentication](../Backend/Django/Authentication.md); the rules that generalise:
 
 - **Verify the token's signature *and* its claims.** A syntactically valid JWT proves nothing until you have checked issuer, audience, expiry and algorithm against a fixed list.
 - **Store tokens where script can't read them.** For browsers, an `HttpOnly` cookie beats `localStorage`: an XSS bug then steals a session it cannot exfiltrate.
@@ -73,7 +73,7 @@ invoice = get_object_or_404(Invoice, pk=pk, organization=request.user.organizati
 - Scope the **queryset**, don't filter after fetching: `get_queryset()` returning `Model.objects.filter(owner=self.request.user)` makes the safe path the default one.
 - **BFLA** is the same bug at the endpoint level: role checks must live on every route, including the ones only the admin UI links to.
 - Unguessable IDs (UUIDs) are **not** authorization. They raise the cost of enumeration and nothing else.
-- Pick a model and apply it consistently — RBAC, ABAC or policy-as-code — as laid out in [Access Control](./AccessControl.md) and [Authorization](../Django/Authorization.md).
+- Pick a model and apply it consistently — RBAC, ABAC or policy-as-code — as laid out in [Access Control](./AccessControl.md) and [Authorization](../Backend/Django/Authorization.md).
 
 ### 🚦 Rate Limiting
 

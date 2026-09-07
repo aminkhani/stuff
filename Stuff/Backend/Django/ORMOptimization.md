@@ -90,7 +90,7 @@ SELECT COUNT(*) FROM items WHERE order_id = 1;
 SELECT COUNT(*) FROM items WHERE order_id = 2;   -- ... 48 more
 ```
 
-Each of those is a round trip plus a parse plus a plan. At 0.4 ms apiece, 101 queries is 40 ms of pure overhead for work the database could have done in one statement. The identical trap in an API lives in serializer fields instead of template tags, with the same cause and the same fix — [DRF Internals](./DRF/DRFInternals.md) shows what it looks like there.
+Each of those is a round trip plus a parse plus a plan. At 0.4 ms apiece, 101 queries is 40 ms of pure overhead for work the database could have done in one statement. The identical trap in an API lives in serializer fields instead of template tags, with the same cause and the same fix — [DRF Internals](DRF/DRF%20Internals.md) shows what it looks like there.
 
 ```python
 orders = (
@@ -226,7 +226,7 @@ p.save()                            # UPDATE ... SET stock = 41
 Product.objects.filter(pk=1, stock__gte=1).update(stock=F("stock") - 1)
 ```
 
-`F()` moves the arithmetic into SQL, so two concurrent decrements land on 40 rather than 41. Folding `stock__gte=1` into the filter turns check-then-act into a single atomic statement whose return value — the number of rows updated — tells you whether it applied. When the invariant spans several statements you need a real transaction and often a lock: `select_for_update()` holds row locks for the enclosing `atomic()` block, and the isolation levels and lock-ordering rules behind that are in [Database Transactions](../Database/Database%20Transactions.md).
+`F()` moves the arithmetic into SQL, so two concurrent decrements land on 40 rather than 41. Folding `stock__gte=1` into the filter turns check-then-act into a single atomic statement whose return value — the number of rows updated — tells you whether it applied. When the invariant spans several statements you need a real transaction and often a lock: `select_for_update()` holds row locks for the enclosing `atomic()` block, and the isolation levels and lock-ordering rules behind that are in [Database Transactions](../../Database/Database%20Transactions.md).
 
 | Operation | Queries | Signals | `auto_now` | Notes |
 | --- | --- | --- | --- | --- |
@@ -273,7 +273,7 @@ qs = Order.objects.filter(
 ).order_by("-created_at", "-id")[:20]
 ```
 
-Keyset pagination needs an index on the exact tuple you order by and a **unique** tail, so ties cannot make rows repeat or disappear between pages. You give up "jump to page 500", which no real user wants and every scraper does. `COUNT(*)` for a total page count is the other hidden cost — it scans the whole filtered set on every request, so cache it, approximate it from table statistics, or drop it from the UI. Tables where this matters are the ones that only ever grow; archival and rollup strategies for those are in [Managing Ever-Growing Tables](../Database/ManagingEver%E2%80%91GrowingTables.md), and once a single table dominates the schema, [Partitioning](../Database/Partitioning.md) changes which plans are available at all.
+Keyset pagination needs an index on the exact tuple you order by and a **unique** tail, so ties cannot make rows repeat or disappear between pages. You give up "jump to page 500", which no real user wants and every scraper does. `COUNT(*)` for a total page count is the other hidden cost — it scans the whole filtered set on every request, so cache it, approximate it from table statistics, or drop it from the UI. Tables where this matters are the ones that only ever grow; archival and rollup strategies for those are in [Managing Ever-Growing Tables](../../Database/ManagingEver‑GrowingTables.md), and once a single table dominates the schema, [Partitioning](../../Database/Partitioning.md) changes which plans are available at all.
 
 ---
 ## 🧮 Indexes, declared from Django
@@ -306,7 +306,7 @@ class Order(models.Model):
 | `UniqueConstraint` | a unique index | correctness first, and the index comes free |
 | `GinIndex`, `BTreeGinIndex` | PostgreSQL-specific structures | `JSONField` containment, trigram and full-text search |
 
-A `ForeignKey` is indexed automatically and an M2M through-table indexes both sides. What Django cannot do is make an index *usable*: a function applied to the column (`WHERE DATE(created_at) = …`), a leading wildcard (`LIKE '%x'`), an `OR` across unrelated columns, or a type mismatch between column and parameter all force a scan no matter what you declared. Which structure wins for which access pattern is in [Database Indexing](../Database/Database%20Indexing.md); whether *your* query uses one is only answerable from the plan.
+A `ForeignKey` is indexed automatically and an M2M through-table indexes both sides. What Django cannot do is make an index *usable*: a function applied to the column (`WHERE DATE(created_at) = …`), a leading wildcard (`LIKE '%x'`), an `OR` across unrelated columns, or a type mismatch between column and parameter all force a scan no matter what you declared. Which structure wins for which access pattern is in [Database Indexing](../../Database/Database%20Indexing.md); whether *your* query uses one is only answerable from the plan.
 
 ---
 ## 📏 Measuring instead of guessing
@@ -337,7 +337,7 @@ for q in ctx.captured_queries:
 print(Order.objects.filter(status="open").explain(analyze=True, buffers=True))
 ```
 
-A query *count* is a code review problem; a query *duration* is a plan problem, and conflating them wastes days. A sequential scan over 500 rows is fine, the same plan over 50 million is an outage, and only `EXPLAIN (ANALYZE, BUFFERS)` against production-shaped data tells you which one you have. Estimated versus actual rows differing by orders of magnitude is the highest-signal line in any plan — [Query Execution Plans](../Database/Query%20Execution%20Plans.md) covers how to read one.
+A query *count* is a code review problem; a query *duration* is a plan problem, and conflating them wastes days. A sequential scan over 500 rows is fine, the same plan over 50 million is an outage, and only `EXPLAIN (ANALYZE, BUFFERS)` against production-shaped data tells you which one you have. Estimated versus actual rows differing by orders of magnitude is the highest-signal line in any plan — [Query Execution Plans](../../Database/Query%20Execution%20Plans.md) covers how to read one.
 
 > [!TIP]
 > Optimize against production-*shaped* data, not merely production-sized data. Skew matters more than volume: a status column that is 98% `closed` makes the planner's choice for `status="open"` completely different from what a uniformly seeded dev database suggests.
@@ -350,11 +350,11 @@ Some queries are already as good as they can be and still too slow. The fix is t
 | Situation | Move to | Why |
 | --- | --- | --- |
 | The same expensive read, over and over | a cache keyed on the inputs — see [Caching](../SoftwareDesign/Caching.md) | the cheapest query is the one you never send |
-| An expensive write path inside the request | a background task — see [Celery](./Celery.md) | nobody needs to watch a spinner while counters rebuild |
-| A heavy aggregation that tolerates staleness | a materialized view on a refresh schedule — see [Materialized View](../Database/MaterializedView.md) | pay once per refresh instead of once per request |
+| An expensive write path inside the request | a background task — see [Celery](Celery.md) | nobody needs to watch a spinner while counters rebuild |
+| A heavy aggregation that tolerates staleness | a materialized view on a refresh schedule — see [Materialized View](../../Database/MaterializedView.md) | pay once per refresh instead of once per request |
 | Something the ORM cannot express | `raw()` or `connection.cursor()` with **parameters** | window functions, CTEs, `DISTINCT ON` — real SQL, safely bound |
 | Reporting competing with transactional load | a read replica or a separate warehouse | analytics and OLTP want different indexes and different plans |
-| Many independent slow calls in one request | concurrency, carefully — see [Futures](../Python/Futures.md) | a thread per query is a connection per thread; it hides an N+1 rather than fixing it and drains the pool |
+| Many independent slow calls in one request | concurrency, carefully — see [Futures](../../Python/Futures.md) | a thread per query is a connection per thread; it hides an N+1 rather than fixing it and drains the pool |
 
 ```python
 # raw SQL is fine; string interpolation is not

@@ -10,7 +10,7 @@ debugInConsole: false # Print debug info in Obsidian console
 ---
 ## 🧩 Authentication vs Authorization
 
-**Authentication** (AuthN) answers *who are you* and yields a verified identity — password, token, client certificate, SSO assertion. **Authorization** (AuthZ) answers *what may this identity do to this specific resource, right now*, and yields an allow/deny verdict. AuthN happens once per session; AuthZ happens **on every request, for every object touched**. Most real breaches are not broken AuthN — they are a missing AuthZ check on one endpoint. See [Authentication](../Django/Authentication.md) and [Authorization](../Django/Authorization.md).
+**Authentication** (AuthN) answers *who are you* and yields a verified identity — password, token, client certificate, SSO assertion. **Authorization** (AuthZ) answers *what may this identity do to this specific resource, right now*, and yields an allow/deny verdict. AuthN happens once per session; AuthZ happens **on every request, for every object touched**. Most real breaches are not broken AuthN — they are a missing AuthZ check on one endpoint. See [Authentication](../Backend/Django/Authentication.md) and [Authorization](../Backend/Django/Authorization.md).
 
 **Access control** is the machinery that turns "who" into "may". Like a hotel 🏨: reception verifies your passport (AuthN), while the keycard system decides which doors open, on which floor, until checkout (AuthZ).
 

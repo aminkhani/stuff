@@ -370,7 +370,7 @@ def get_queryset(self):
     return Order.objects.filter(organization=self.request.user.organization)
 ```
 
-Scope the queryset and object-level safety follows for free, because `get_object()` looks the object up *inside* `filter_queryset(get_queryset())` — a foreign id then 404s before any permission class is consulted. That is also why 404 is the right answer for "exists, but not yours": a `403` confirms the id exists. The vulnerability class and the test pattern that catches it are catalogued in [API Security](../../Security/API%20Security.md); the model-level question of where policy lives (RBAC, ABAC, per-object backends) is in [Access Control](../../Security/AccessControl.md) and [Authorization](../Authorization.md).
+Scope the queryset and object-level safety follows for free, because `get_object()` looks the object up *inside* `filter_queryset(get_queryset())` — a foreign id then 404s before any permission class is consulted. That is also why 404 is the right answer for "exists, but not yours": a `403` confirms the id exists. The vulnerability class and the test pattern that catches it are catalogued in [API Security](../../../Security/API%20Security.md); the model-level question of where policy lives (RBAC, ABAC, per-object backends) is in [Access Control](../../../Security/AccessControl.md) and [Authorization](../Authorization.md).
 
 ### 🚪 Deny by default, and composition
 
@@ -416,7 +416,7 @@ Permission classes also drive the `OPTIONS` metadata and the browsable form. Whe
 | simplejwt's `JWTAuthentication` | `Authorization: Bearer <jwt>` | stateless, cannot be revoked before `exp` — keep access tokens in minutes |
 | `RemoteUserAuthentication` | an upstream header | safe only if the proxy always overwrites that header |
 
-Ordering is a performance choice, not a security one: put the cheap common case first. The Django-side mechanics — user models, password hashing, session handling — are in [Authentication](../Authentication.md), delegated third-party access in [OAuth](../OAuth.md); and if you would rather not hand-write registration, login, activation and password-reset endpoints, [Djoser](./Djoser.md) ships them as viewsets to mount and then re-audit against your own permission defaults.
+Ordering is a performance choice, not a security one: put the cheap common case first. The Django-side mechanics — user models, password hashing, session handling — are in [Authentication](../Authentication.md), delegated third-party access in [OAuth](../OAuth.md); and if you would rather not hand-write registration, login, activation and password-reset endpoints, [Djoser](Djoser.md) ships them as viewsets to mount and then re-audit against your own permission defaults.
 
 > [!IMPORTANT]
 > Mixing `SessionAuthentication` with a token class on the same endpoint is how CSRF protection gets bypassed by accident. When a browser holds a session cookie, `SessionAuthentication` matches and CSRF applies — but a request crafted to match the token class instead never goes through that check. Keep cookie-authenticated and token-authenticated surfaces separate, and keep the settings half of this (`SECURE_*`, cookie flags, `ALLOWED_HOSTS`, `DEBUG`) in one audited place: [Security Settings](../SecuritySettings.md).
@@ -452,7 +452,7 @@ class OrderViewSet(viewsets.ReadOnlyModelViewSet):
     ordering = ["-created_at"]                    # deterministic default
 ```
 
-- `ordering_fields = "__all__"` lets a client sort by any column, indexed or not. `ORDER BY total` over a million rows with no index is a full sort in the database on every request — the cheapest way for an anonymous client to burn your CPU. Keep the allowlist to indexed columns, and confirm the index is actually used before adding one: [Query Execution Plans](../../Database/Query%20Execution%20Plans.md) covers reading the plan.
+- `ordering_fields = "__all__"` lets a client sort by any column, indexed or not. `ORDER BY total` over a million rows with no index is a full sort in the database on every request — the cheapest way for an anonymous client to burn your CPU. Keep the allowlist to indexed columns, and confirm the index is actually used before adding one: [Query Execution Plans](../../../Database/Query%20Execution%20Plans.md) covers reading the plan.
 - A queryset with no deterministic `ORDER BY` returns rows in whatever order the database finds convenient, so paginated results can repeat or skip rows between pages. Always set a default `ordering`.
 - `SearchFilter` builds `icontains` chains — a sequential scan with a leading wildcard. Past a few thousand rows, move to `SearchVector` or trigram matching with a GIN index.
 
@@ -520,7 +520,7 @@ class OrderAPITests(APITestCase):
 - `APIClient` speaks the API: `client.post(url, data, format="json")` goes through the parsers, unlike Django's test client, which form-encodes by default.
 - `force_authenticate(user)` sets `request.user` and **skips the authentication classes entirely**. That is exactly right for permission tests and exactly wrong for testing the auth classes themselves — those need a real credential. The standalone `force_authenticate(request, user=...)` helper does the same thing for `APIRequestFactory` requests.
 - `assertNumQueries` is the regression test for the N+1 section above. Pin it on every list endpoint.
-- Tests that pass alone and fail in a suite are usually ordering, shared state or time; the taxonomy and the fixes are in [Flaky Tests](../../Python/FlakyTest.md).
+- Tests that pass alone and fail in a suite are usually ordering, shared state or time; the taxonomy and the fixes are in [Flaky Tests](../../../Python/FlakyTest.md).
 
 ---
 ## 🚨 Common mistakes

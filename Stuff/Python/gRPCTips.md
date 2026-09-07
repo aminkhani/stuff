@@ -168,7 +168,7 @@ def CreateItem(self, request, context):
 
 - **TLS is not optional.** `add_insecure_port` belongs in tests. Use `server.add_secure_port(addr, grpc.ssl_server_credentials(...))`, and for service-to-service traffic require client certs (`require_client_auth=True`) — the mTLS trade-offs are in [Transport Security](../Security/TransportSecurity.md).
 - **Token auth rides in metadata, over TLS.** `grpc.composite_channel_credentials(channel_creds, call_creds)` refuses to attach call credentials to an insecure channel on purpose: a bearer token on a plaintext channel is a token you have given away.
-- **Authenticate in an interceptor, authorize in the handler.** A `ServerInterceptor` is the right place to validate the token once; per-object checks still belong next to the data, exactly as with [Authorization](../Django/Authorization.md).
+- **Authenticate in an interceptor, authorize in the handler.** A `ServerInterceptor` is the right place to validate the token once; per-object checks still belong next to the data, exactly as with [Authorization](../Backend/Django/Authorization.md).
 - **Metadata is not a safe place for secrets you didn't intend to send.** Interceptor logging that dumps all metadata will happily write `authorization` headers into your logs.
 - **Turn reflection off in production.** `grpc_reflection` is a schema dump for anyone who can reach the port — great for `grpcurl` in dev, free reconnaissance in prod.
 - **Message and stream limits are security controls**: `max_receive_message_length`, `maximum_concurrent_rpcs`, `grpc.max_concurrent_streams`, plus a rate limit at the proxy. Protobuf parsing of a hostile 200 MB message is a CPU denial-of-service.

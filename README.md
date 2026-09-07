@@ -31,12 +31,12 @@ Hey there! This repo is my personal knowledge vault — an Obsidian vault kept u
 
 **Django**
 
-- 🔐 [Authentication](Stuff/Django/Authentication.md)
-    - 📦 [Djoser](Stuff/Django/DRF/Djoser.md) — ready-made DRF auth endpoints
-- 🔑 [Authorization](Stuff/Django/Authorization.md)
-    - 🚪 [OAuth](Stuff/Django/OAuth.md)
+- 🔐 [Authentication](Stuff/Backend/Django/Authentication.md)
+    - 📦 [Djoser](Stuff/Backend/Django/DRF/Djoser.md) — ready-made DRF auth endpoints
+- 🔑 [Authorization](Stuff/Backend/Django/Authorization.md)
+    - 🚪 [OAuth](Stuff/Backend/Django/OAuth.md)
 - 📑 Models
-    - ⌨️ [Character Types](Stuff/Django/Models/CharacterTypes.md) — `CharField` vs `TextField`
+    - ⌨️ [Character Types](Stuff/Backend/Django/Models/CharacterTypes.md) — `CharField` vs `TextField`
 - 🐘 [Managing Ever‑Growing Tables](Stuff/Database/ManagingEver%E2%80%91GrowingTables.md) — Django + PostgreSQL growth strategies
 
 **🎯 To Learn**
@@ -223,11 +223,11 @@ Everything in the vault, folder by folder, so nothing gets lost. Kubernetes is a
 <details>
 <summary><b>Stuff/Django</b> — 5 notes</summary>
 
-- [Authentication](Stuff/Django/Authentication.md)
-- [Authorization](Stuff/Django/Authorization.md)
-- [OAuth](Stuff/Django/OAuth.md)
-- [DRF/Djoser](Stuff/Django/DRF/Djoser.md)
-- [Models/CharacterTypes](Stuff/Django/Models/CharacterTypes.md)
+- [Authentication](Stuff/Backend/Django/Authentication.md)
+- [Authorization](Stuff/Backend/Django/Authorization.md)
+- [OAuth](Stuff/Backend/Django/OAuth.md)
+- [DRF/Djoser](Stuff/Backend/Django/DRF/Djoser.md)
+- [Models/CharacterTypes](Stuff/Backend/Django/Models/CharacterTypes.md)
 
 </details>
 
